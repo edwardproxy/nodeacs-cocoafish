@@ -1,0 +1,156 @@
+<html>
+<head>
+  <title><% if(typeof title !== "undefined"){ %><%= title %><% }else{ %>Cocoafish<% } %></title>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  <script type="text/javascript">google.load("jquery", "1.7.1");</script>
+  <script type="text/javascript">
+    $(function(){
+      if($("#flash").length > 0){
+        setTimeout(function(){$("#flash").fadeOut()},3000);
+      }
+      $(window).resize(function(){
+        $("#ctnr").css('width', parseInt($('body').width()) - 202);
+      });
+      $("#ctnr").css('width', parseInt($('body').width()) - 202);
+    });
+  </script>
+</head>
+<body>
+  <% if(req.session.msg){ %>
+    <div id="flash"><%= req.session.msg %></div>
+  <% } %>
+  <div id="ctr">
+    <% if(req.session.user) { %>
+      <div id="l-nav">
+        <a href="/profile" class="user l-n-btn"><%= (req.session.user.email) ? req.session.user.email : req.session.user.username %></a>
+        <a href="/logout" class="l-n-btn">Logout</a>
+        <a href="/chatroom" class="l-n-btn">Chatroom</a>
+        <a href="/" class="l-n-btn">/</a>
+        <ul>
+          <li <% if(req.session.controller === "acls"){ %>class="active"<% } %>>
+            <a href="#">ACL</a>
+            <ul>
+              <li><a href="/acls">index</a></li>
+              <li><a href="/acls/new">create</a></li>
+            </ul>
+          </li>
+          <li <% if(req.session.controller === "chats"){ %>class="active"<% } %>>
+            <a href="/chats">Chats</a>
+            <ul>
+              <li><a href="/chats">index</a></li>
+              <li><a href="/chats/new">create</a></li>
+            </ul>
+          </li>
+          <li <% if(req.session.controller === "checkins"){ %>class="active"<% } %>>
+            <a href="/checkins">Checkins</a>
+            <ul>
+              <li><a href="/checkins">index</a></li>
+              <li><a href="/checkins/new">create</a></li>
+            </ul>
+          </li>
+          <li <% if(req.session.controller === "objects"){ %>class="active"<% } %>>
+            <a href="/objects">Custom Objects</a>
+            <ul>
+              <li><a href="/objects">index</a></li>
+              <li><a href="/objects/new">create</a></li>
+            </ul>
+          </li>
+          <li <% if(req.session.controller === "events"){ %>class="active"<% } %>>
+            <a href="/events">Events</a>
+            <ul>
+              <li><a href="/events">index</a></li>
+              <li><a href="/events/new">create</a></li>
+            </ul>
+          </li>
+          <li <% if(req.session.controller === "files"){ %>class="active"<% } %>>
+            <a href="/files">Files</a>
+            <ul>
+              <li><a href="/files">index</a></li>
+              <li><a href="/files/new">create</a></li>
+            </ul>
+          </li>
+          <li <% if(req.session.controller === "friends"){ %>class="active"<% } %>>
+            <a href="/friends">Friends</a>
+            <ul>
+              <li><a href="/friends">index</a></li>
+              <li><a href="/friends/new">create</a></li>
+            </ul>
+          </li>
+          <li <% if(req.session.controller === "likes"){ %>class="active"<% } %>>
+            <a href="/likes">Likes</a>
+            <ul>
+              <li><a href="/likes">index</a></li>
+              <li><a href="/likes/new">create</a></li>
+            </ul>
+          </li>
+          <li <% if(req.session.controller === "messages"){ %>class="active"<% } %>>
+            <a href="/messages">Messages</a>
+            <ul>
+              <li><a href="/messages">index</a></li>
+              <li><a href="/messages/new">create</a></li>
+            </ul>
+          </li>
+          <li <% if(req.session.controller === "photos"){ %>class="active"<% } %>>
+            <a href="/photos">Photos</a>
+            <ul>
+              <li><a href="/photos">index</a></li>
+              <li><a href="/photos/new">create</a></li>
+            </ul>
+          </li>
+          <li <% if(req.session.controller === "collections"){ %>class="active"<% } %>>
+            <a href="/collections">Photo Collections</a>
+            <ul>
+              <li><a href="/collections">index</a></li>
+              <li><a href="/collections/new">create</a></li>
+            </ul>
+          </li>
+          <li <% if(req.session.controller === "places"){ %>class="active"<% } %>>
+            <a href="/places">Places</a>
+            <ul>
+              <li><a href="/places">index</a></li>
+              <li><a href="/places/new">create</a></li>
+            </ul>
+          </li>
+          <li <% if(req.session.controller === "posts"){ %>class="active"<% } %>>
+            <a href="/posts">Posts</a>
+            <ul>
+              <li><a href="/posts">index</a></li>
+              <li><a href="/posts/new">create</a></li>
+            </ul>
+          </li>
+          <li <% if(req.session.controller === "reviews"){ %>class="active"<% } %>>
+            <a href="/reviews">Reviews</a>
+            <ul>
+              <li><a href="/reviews">index</a></li>
+              <li><a href="/reviews/new">create</a></li>
+            </ul>
+          </li>
+          <li <% if(req.session.controller === "statuses"){ %>class="active"<% } %>>
+            <a href="/statuses">Statuses</a>
+            <ul>
+              <li><a href="/statuses">index</a></li>
+              <li><a href="/statuses/new">create</a></li>
+            </ul>
+          </li>
+          <!-- <li>
+            <a href="#">Users</a>
+            <ul>
+              <li><a href="/users">index</a></li>
+              <li><a href="/users/new">create</a></li>
+            </ul>
+          </li> -->
+        </ul>
+      </div>
+    <% }else{ %>
+      <div id="l-nav">
+        <a href="/login" class="l-n-btn">login</a>
+        <a href="/signup" class="l-n-btn">signup</a>
+      </div>
+    <% } %>
+  </div>
+  <%- body %>
+  <div class="clr"></div>
+</body>
+</html>

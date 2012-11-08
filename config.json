@@ -1,0 +1,96 @@
+{
+  "routes":
+  [
+    { "path": "/", "callback": "application#index" },
+    { "path": "/login", "method": "get", "callback": "application#login" },
+    { "path": "/login", "method": "post", "callback": "session#login" },
+    { "path": "/logout", "method": "get", "callback": "session#logout" },
+    { "path": "/signup", "method": "get", "callback": "application#signup" },
+    { "path": "/signup", "method": "post", "callback": "user#signup" },
+    { "path": "/profile", "method": "get", "callback": "user#profile" },
+    { "path": "/profile/update", "method": "post", "callback": "user#_update" },
+    { "path": "/chatroom", "method": "get", "callback": "application#chatroom" },
+
+    { "path": "/chats", "method": "get", "callback": "chats#_index" },
+    { "path": "/chats/new", "method": "get", "callback": "chats#_new" },
+    { "path": "/chats/create", "method": "post", "callback": "chats#_create" },
+
+    { "path": "/checkins", "method": "get", "callback": "checkins#_index" },
+    { "path": "/checkins/new", "method": "get", "callback": "checkins#_new" },
+    { "path": "/checkins/create", "method": "post", "callback": "checkins#_create" },
+    { "path": "/checkins/:id", "method": "get", "callback": "checkins#_show" },
+    { "path": "/checkins/:id/delete", "method": "get", "callback": "checkins#_destroy" },
+
+    { "path": "/collections", "method": "get", "callback": "collections#_index" },
+    { "path": "/collections/new", "method": "get", "callback": "collections#_new" },
+    { "path": "/collections/create", "method": "post", "callback": "collections#_create" },
+    { "path": "/collections/:id", "method": "get", "callback": "collections#_show" },
+    { "path": "/collections/:id/edit", "method": "get", "callback": "collections#_edit" },
+    { "path": "/collections/:id/update", "method": "post", "callback": "collections#_update" },
+    { "path": "/collections/:id/delete", "method": "get", "callback": "collections#_destroy" },
+
+    { "path": "/events", "method": "get", "callback": "events#_index" },
+    { "path": "/events/new", "method": "get", "callback": "events#_new" },
+    { "path": "/events/create", "method": "post", "callback": "events#_create" },
+    { "path": "/events/:id", "method": "get", "callback": "events#_show" },
+    { "path": "/events/:id/edit", "method": "get", "callback": "events#_edit" },
+    { "path": "/events/:id/update", "method": "post", "callback": "events#_update" },
+    { "path": "/events/:id/delete", "method": "get", "callback": "events#_destroy" },
+
+    { "path": "/files", "method": "get", "callback": "files#_index" },
+    { "path": "/files/new", "method": "get", "callback": "files#_new" },
+    { "path": "/files/create", "method": "post", "callback": "files#_create" },
+    { "path": "/files/:id", "method": "get", "callback": "files#_show" },
+    { "path": "/files/:id/edit", "method": "get", "callback": "files#_edit" },
+    { "path": "/files/:id/update", "method": "post", "callback": "files#_update" },
+    { "path": "/files/:id/delete", "method": "get", "callback": "files#_destroy" },
+    
+    { "path": "/places", "method": "get", "callback": "places#_index" },
+    { "path": "/places/new", "method": "get", "callback": "places#_new" },
+    { "path": "/places/create", "method": "post", "callback": "places#_create" },
+    { "path": "/places/:id", "method": "get", "callback": "places#_show" },
+    { "path": "/places/:id/edit", "method": "get", "callback": "places#_edit" },
+    { "path": "/places/:id/update", "method": "post", "callback": "places#_update" },
+    { "path": "/places/:id/delete", "method": "get", "callback": "places#_destroy" },
+
+    { "path": "/photos", "method": "get", "callback": "photos#_index" },
+    { "path": "/photos/new", "method": "get", "callback": "photos#_new" },
+    { "path": "/photos/create", "method": "post", "callback": "photos#_create" },
+    { "path": "/photos/:id", "method": "get", "callback": "photos#_show" },
+    { "path": "/photos/:id/edit", "method": "get", "callback": "photos#_edit" },
+    { "path": "/photos/:id/update", "method": "post", "callback": "photos#_update" },
+    { "path": "/photos/:id/delete", "method": "get", "callback": "photos#_destroy" },
+
+    { "path": "/posts", "method": "get", "callback": "posts#_index" },
+    { "path": "/posts/new", "method": "get", "callback": "posts#_new" },
+    { "path": "/posts/create", "method": "post", "callback": "posts#_create" },
+    { "path": "/posts/:id", "method": "get", "callback": "posts#_show" },
+    { "path": "/posts/:id/edit", "method": "get", "callback": "posts#_edit" },
+    { "path": "/posts/:id/update", "method": "post", "callback": "posts#_update" },
+    { "path": "/posts/:id/delete", "method": "get", "callback": "posts#_destroy" },
+
+    { "path": "/reviews", "method": "get", "callback": "reviews#_index" },
+    { "path": "/reviews/new", "method": "get", "callback": "reviews#_new" },
+    { "path": "/reviews/create", "method": "post", "callback": "reviews#_create" },
+    { "path": "/reviews/:id", "method": "get", "callback": "reviews#_show" },
+    { "path": "/reviews/:id/edit", "method": "get", "callback": "reviews#_edit" },
+    { "path": "/reviews/:id/update", "method": "post", "callback": "reviews#_update" },
+    { "path": "/reviews/:id/delete", "method": "get", "callback": "reviews#_destroy" },
+
+    { "path": "/statuses", "method": "get", "callback": "statuses#_index" },
+    { "path": "/statuses/new", "method": "get", "callback": "statuses#_new" },
+    { "path": "/statuses/create", "method": "post", "callback": "statuses#_create" }
+
+  ],
+  "filters":
+  [
+  	 { "path": "/chatroom", "callback": "session_filter#checkSession" },
+     { "path": "*", "callback": "session_filter#checkUserSession" },
+     { "path": "*", "callback": "session_filter#removeMsg" },
+     { "path": "/*", "callback": "session_filter#removeMsg" }
+  ],
+  "websockets":
+  [
+  	{ "event": "msg", "callback": "chatroom#receiveMessage"}
+  ]
+}

@@ -1,0 +1,27 @@
+<div id="ctnr">
+	<% if(typeof obj !== "undefined") { %>	
+		<div id="list">
+			<ul>
+				<li class="h">
+					<span class="obj-id">ID</span>
+					<span class="obj-id">From</span>
+					<span class="name">Message</span>
+					<span class="list-15">Updated_at</span>
+					<span class="more">More</span>
+					<div class="clr"></div>
+				</li>
+				<% var o = obj["chats"] %>
+				<% for(var i=0;i<o.length;i++){ %>
+					<li>
+						<span class="obj-id"><%= o[i].id %></span>
+						<span class="obj-id"><%= o[i].from.id %></span>
+						<span class="name"><%= o[i].message %></span>
+						<span class="list-15"><%= (o[i].updated_at)? o[i].updated_at : "n/a" %></span>
+						<span class="more">n/a</span>
+						<div class="clr"></div>
+					</li>
+				<% } %>
+			</ul>
+		</div>
+	<% } %>
+</div>

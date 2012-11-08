@@ -1,0 +1,14 @@
+<% var o = obj.collections[0] %>
+<div id="ctnr">
+  <div class="form-ctnr">
+    <form name="update" action="/collections/<%= req.params.id %>/update" method="post">
+      <div><label>collection id:</label><span><%= (o.id) ? o.id : '' %></span></div>
+      <div><label>name:</label><input type="text" name="name" value="<%= (o.name) ? o.name : '' %>"/></div>
+      <div><label>parent collection id:</label><input type="text" name="parent_collection_id" value="<%= (o.parent_collection_id) ? o.parent_collection_id : '' %>"/></div>
+      <div><label>cover photo id:</label><input type="text" name="cover_photo_id" value="<%= (o.cover_photo_id) ? o.cover_photo_id : '' %>"/></div>
+      <div><label>tags:</label><input type="text" name="tags" placeholder="a,b,c" value="<%= (o.tags) ? o.tags : '' %>"/></div>
+      <input class="fr" type="submit" value="Submit"><a href="/collections" class="cncl fr">Cancel</a>
+      <div class="clr"></div>
+    </form>
+  </div>
+</div>

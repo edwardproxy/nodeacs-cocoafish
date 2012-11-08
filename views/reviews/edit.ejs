@@ -1,0 +1,13 @@
+<% var o = obj.reviews[0] %>
+<div id="ctnr">
+  <div class="form-ctnr">
+    <form name="update" action="/posts/<%= req.params.id %>/update" method="post">
+      <div><label>review id:</label><span><%= (o.id) ? o.id : '' %></span></div>
+      <div><label>rating:</label><input type="text" name="rating" value="<%= (o.rating) ? orating : '' %>"/></div>
+      <div><label>content:</label><input type="text" name="content" value="<%= (o.content) ? o.content : '' %>"/></div>
+      <div><label>tags:</label><input type="text" name="tags" placeholder="a,b,c" value="<%= (o.tags) ? o.tags : '' %>"/></div>
+      <input class="fr" type="submit" value="Submit"><a href="/reviews" class="cncl fr">Cancel</a>
+      <div class="clr"></div>
+    </form>
+  </div>
+</div>

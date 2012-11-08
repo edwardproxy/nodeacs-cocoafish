@@ -1,0 +1,15 @@
+<% var p = obj["places"][0] %>
+<div id="ctnr">
+  <div class="form-ctnr">
+    <form name="update" action="/places/<%= req.params.id %>/update" method="post">
+      <div><label>place id:</label><span><%= (p.id) ? p.id : '' %></span><input name="place_id" type="hidden" value="<%= (p.id) ? p.id : '' %>"></div>
+      <div><label>name:</label><input type="text" name="name" value="<%= (p.name) ? p.name : '' %>"></div>
+      <div><label>address:</label><input type="text" name="address" value="<%= (p.address) ? p.address : '' %>"></div>
+      <div><label>city:</label><input type="text" name="city" value="<%= (p.city) ? p.city : '' %>"></div>
+      <div><label>state:</label><input type="text" name="state" value="<%= (p.state) ? p.state : '' %>"></div>
+      <div><label>postal code:</label><input type="text" name="postal_code" value="<%= (p.postal_code) ? p.postal_code : '' %>"></div>
+      <input class="fr" type="submit" value="Submit"><a href="/places" class="cncl fr">Cancel</a>
+      <div class="clr"></div>
+    </form>
+  </div>
+</div>

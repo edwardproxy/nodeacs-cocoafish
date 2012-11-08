@@ -1,0 +1,15 @@
+<% var o = obj["events"][0] %>
+<div id="ctnr">
+  <div class="form-ctnr">
+    <form name="update" action="/events/<%= req.params.id %>/update" method="post">
+      <div><label>event id:</label><span><%= (o.id) ? o.id : '' %></span></div>
+      <div><label>start_time:</label><input type="text" name="start_time" placeholder="2011-03-22T20:59:50+0000"></div>
+      <div><label>name:</label><input type="text" name="name"></div>
+      <div><label>detail:</label><input type="text" name="detail"></div>
+      <div><label>duration:</label><input type="text" name="duration"></div>
+      <div><label>tags:</label><input type="text" name="tags" placeholder="a,b,c"></div>
+      <input class="fr" type="submit" value="Submit"><a href="/events" class="cncl fr">Cancel</a>
+      <div class="clr"></div>
+    </form>
+  </div>
+</div>

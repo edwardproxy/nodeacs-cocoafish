@@ -1,0 +1,29 @@
+<div id="ctnr">
+	<% if(typeof obj !== "undefined") { %>	
+		<div id="list">
+			<ul>
+				<li class="h">
+					<span class="obj-id">ID</span>
+					<span class="name">Name</span>
+					<span class="list-15">Updated_at</span>
+					<span class="more">More</span>
+					<div class="clr"></div>
+				</li>
+				<% var o = obj["collections"] %>
+				<% for(var i=0;i<o.length;i++){ %>
+					<li>
+						<span class="obj-id"><%= o[i].id %></span>
+						<span class="name"><%= o[i].name %></span>
+						<span class="list-15"><%= (o[i].updated_at)? o[i].updated_at : "n/a" %></span>
+						<span class="more">
+							<a href="/collections/<%= o[i].id %>" class='btn fl'>Show</a>
+							<a href="/collections/<%= o[i].id %>/edit" class='btn fl'>Edit</a>
+							<a href="/collections/<%= o[i].id %>/delete" class='btn fl'>Delete</a>
+						</span>
+						<div class="clr"></div>
+					</li>
+				<% } %>
+			</ul>
+		</div>
+	<% } %>
+</div>

@@ -1,0 +1,24 @@
+{
+  "name": "cocoafish-nodeacs",
+  "version": "0.1.0",
+  "description": "cocoafish on nodeacs!",
+  "type": "acs",
+  "main": "app.js",
+  "logfile" : "cocoafish-nodeacs.log",
+  "keywords": [
+  ],
+  "author": "peter l",
+  "maintainers": [
+  ],
+  "contributors": [
+  ],
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "preferGlobal": false,
+  "dependencies": {
+  },
+  "license":"",
+  "private": true
+}
