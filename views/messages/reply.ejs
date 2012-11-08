@@ -1,0 +1,10 @@
+<div id="ctnr" class="p10">
+	<div class="form-ctnr">
+		<form name="reply" action="/messages/<%= req.params.id %>/reply" method="post">
+			<div><label>subject:</label><input type="text" name="subject"></div>
+      <div><label>body:</label><input type="text" name="body"></div>
+			<input class="fr" type="submit" value="Submit"><a href="/messages" class="cncl fr">Cancel</a>
+			<div class="clr"></div>
+		</form>
+	</div>
+</div>

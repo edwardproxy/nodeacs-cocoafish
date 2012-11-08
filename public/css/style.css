@@ -13,8 +13,8 @@
 	blue:#6993c2;
 */
 *{font:14px/20px 'Open Sans','helvetcia neue',helvetica,arial,sans-serif;word-break:break-all;}
-.fr{float:right;}
-.fl{float:left;}
+.fr{float:right !important;}
+.fl{float:left !important;}
 .clr{clear:both;}
 ul{list-style:none;padding:0;margin:0;}
 li{padding:0;margin:0;}
@@ -23,15 +23,23 @@ a{text-decoration:none;color:#6993c2;}
 .btn:hover{background:#20c2AA;color:#fff;}
 body{margin:0;padding:0;}
 form{margin:0;padding:0;}
-#ctr{float:left;height:100%;width:200px;}
-#ctnr{float:left;position:relative;margin:0;padding:0;width:70%;border-left:2px solid #ccc;min-height:100%}
-#login,.form-ctnr{width:400px;padding:30px;border:1px solid #333;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;background:#e5e5e5;margin:10px;}
+.w10p{width:10%;}
+.w15p{width:15%;}
+.w20p{width:20%;}
+.w160{width:160px;}
+.p10{padding:10px !important;}
+
+/* */
+#ctr{position:fixed;width:200px;border-right:2px solid #ccc;height:100%;}
+#ctnr{position:relative;margin:0 0 0 202px;padding:0;width:100%;}
+#login,.form-ctnr{width:500px;padding:30px;border:1px solid #333;background:#f5f5f5;margin:10px;}
+.form-ctnr > form > div{margin:5px 0;}
 #login span,.form-ctnr span{padding:3px;outline:none;}
 #login input,.form-ctnr input{padding:3px;outline:none;border:1px solid #aaa;}
 #login input:focus,.form-ctnr input:focus{border:1px solid #6993c2;}
-#login label,.form-ctnr label{display:inline-block;width:100px;}
+#login label,.form-ctnr label{display:inline-block;width:200px;font:14px/20px 'Open Sans','helvetcia neue',helvetica,arial,sans-serif;}
 .form-ctnr input[type="file"]{border:0;}
-#login input[type="text"],#login input[type="password"],.form-ctnr input[type="text"]{width:300px;}
+#login input[type="text"],#login input[type="password"],.form-ctnr input[type="text"],.form-ctnr input[type="password"]{width:300px;}
 #login input[type="submit"],.form-ctnr input[type="submit"]{border:1px solid #333;background:#333;color:#fff;margin:2px;padding:3px;}
 .cncl{display:block;border:1px solid #333;background:#333;color:#fff;margin:2px;cursor:pointer;padding:3px;}
 
@@ -59,18 +67,18 @@ form{margin:0;padding:0;}
 
 /* objects#index */
 #list{padding:0;width:100%;}
-#list ul li{padding:3px;border:1px solid #ccc;border-left:0;border-top:0;line-height:26px;}
-#list ul li:hover{background:#f5f5f5;}
-#list ul li span{display:block;float:left;line-height:30px;}
-#list ul li span.obj-id,#list ul li span.p-id{width:20%;}
-#list ul li span.name{width:15%;}
-#list ul li span.address{width:25%;}
-#list ul li span.city{width:15%;}
-#list ul li span.list-15{width:15%;}
-#list ul li span.more{width:20%;}
-#list ul li:first-child{border-top:1px solid #ccc;}
+#list > ul > li{padding:3px;border:1px solid #ccc;border-left:0;border-top:0;line-height:26px;}
+#list > ul > li:hover{background:#f5f5f5;}
+#list > ul > li > span{display:block;float:left;font:13px/30px 'Open Sans','helvetcia neue',helvetica,arial,sans-serif;}
+#list > ul > li > span.obj-id,#list > ul > li > span.p-id{width:20%;}
+#list > ul > li > span.name{width:15%;}
+#list > ul > li > span.address{width:25%;}
+#list > ul > li > span.city{width:15%;}
+#list > ul > li > span.list-15{width:15%;}
+#list > ul > li > span.more{width:20%;}
+#list > ul > li:first-child{border-top:1px solid #ccc;}
 
 /* objects#show */
-.s-ctnr{width:500px;padding:30px;border:1px solid #333;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;background:#e5e5e5;margin:10px;}
+.s-ctnr{width:500px;padding:30px;border:1px solid #333;background:#f5f5f5;margin:0 10px 10px 20px;}
 .place .name,.place .val{display:block;}
 .place .name{width:150px;}.place .val{width:300px;}

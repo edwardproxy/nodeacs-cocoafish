@@ -1,5 +1,5 @@
 <% var o = obj.users[0] %>
-<div id="ctnr">
+<div id="ctnr" class="p10">
   <div class="form-ctnr">
     <form name="update" action="/profile/update" method="post">
       <div><label>user id:</label><span><%= (o.id) ? o.id : '' %></span></div>
@@ -10,7 +10,7 @@
       <div><label>first_name:</label><input type="text" name="first_name" value="<%= (o.first_name) ? o.first_name : '' %>"/></div>
       <div><label>last_name:</label><input type="text" name="last_name" value="<%= (o.last_name) ? o.last_name : '' %>"/></div>
       <div><label>tags:</label><input type="text" name="tags" placeholder="a,b,c" value="<%= (o.tags) ? o.tags : '' %>"/></div>
-      <input class="fr" type="submit" value="Submit"><a href="/reviews" class="cncl fr">Cancel</a>
+      <input class="fr" type="submit" value="Submit"><a href="/" class="cncl fr">Cancel</a>
       <div class="clr"></div>
     </form>
   </div>

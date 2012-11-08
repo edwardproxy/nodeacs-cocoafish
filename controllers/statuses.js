@@ -11,7 +11,7 @@ function _index(req, res) {
         req: req
       });
     }else{
-      req.session.flash = {msg:e.message,r:0}
+      req.session.msg = e.message;
       res.redirect('/');
       logger.debug('Error: ' + JSON.stringify(e));
     }

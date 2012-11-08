@@ -44,6 +44,33 @@
     { "path": "/files/:id/edit", "method": "get", "callback": "files#_edit" },
     { "path": "/files/:id/update", "method": "post", "callback": "files#_update" },
     { "path": "/files/:id/delete", "method": "get", "callback": "files#_destroy" },
+
+    { "path": "/friends", "method": "get", "callback": "friends#_index" },
+    { "path": "/friends/requests", "method": "get", "callback": "friends#_requests" },
+    { "path": "/friends/new", "method": "get", "callback": "friends#_new" },
+    { "path": "/friends/add", "method": "post", "callback": "friends#_add" },
+    { "path": "/friends/:id/approve", "method": "get", "callback": "friends#_approve" },
+    { "path": "/friends/:id/remove", "method": "get", "callback": "friends#_remove" },
+
+    { "path": "/messages", "method": "get", "callback": "messages#_index" },
+    { "path": "/messages/sent", "method": "get", "callback": "messages#_sent" },
+    { "path": "/messages/threads", "method": "get", "callback": "messages#_threads" },
+    { "path": "/messages/new", "method": "get", "callback": "messages#_new" },
+    { "path": "/messages/create", "method": "post", "callback": "messages#_create" },
+    { "path": "/messages/:id/thread", "method": "get", "callback": "messages#_thread" },
+    { "path": "/messages/:id/reply", "method": "get", "callback": "messages#reply" },
+    { "path": "/messages/:id/reply", "method": "post", "callback": "messages#_reply" },
+    { "path": "/messages/:id", "method": "get", "callback": "messages#_show" },
+    { "path": "/messages/:id/delete", "method": "get", "callback": "messages#_destroy" },
+    { "path": "/messages/:id/thread/delete", "method": "get", "callback": "messages#_destroyThread" },
+
+    { "path": "/objects", "method": "get", "callback": "objects#_index" },
+    { "path": "/objects/new", "method": "get", "callback": "objects#_new" },
+    { "path": "/objects/create", "method": "post", "callback": "objects#_create" },
+    { "path": "/objects/:classname/:id", "method": "get", "callback": "objects#_show" },
+    { "path": "/objects/:classname/:id/edit", "method": "get", "callback": "objects#_edit" },
+    { "path": "/objects/:classname/:id/update", "method": "post", "callback": "objects#_update" },
+    { "path": "/objects/:classname/:id/delete", "method": "get", "callback": "objects#_destroy" },
     
     { "path": "/places", "method": "get", "callback": "places#_index" },
     { "path": "/places/new", "method": "get", "callback": "places#_new" },
@@ -79,15 +106,14 @@
 
     { "path": "/statuses", "method": "get", "callback": "statuses#_index" },
     { "path": "/statuses/new", "method": "get", "callback": "statuses#_new" },
-    { "path": "/statuses/create", "method": "post", "callback": "statuses#_create" }
+    { "path": "/statuses/create", "method": "post", "callback": "statuses#_create" },
 
+    { "path": "*", "method": "get", "callback": "application#page_not_found" }
   ],
   "filters":
   [
   	 { "path": "/chatroom", "callback": "session_filter#checkSession" },
-     { "path": "*", "callback": "session_filter#checkUserSession" },
-     { "path": "*", "callback": "session_filter#removeMsg" },
-     { "path": "/*", "callback": "session_filter#removeMsg" }
+     { "path": "*", "callback": "session_filter#checkUserSession" }
   ],
   "websockets":
   [

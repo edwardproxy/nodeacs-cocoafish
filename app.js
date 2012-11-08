@@ -30,17 +30,6 @@ function start(app) {
 	    errors: err.stack
 	  });
 	});
-
-	app.use(function(req, res, next){
-	  if(req.session.flash && req.session.flash.r === 0){
-	  	req.session.flash.r = 1;
-	  	logger.debug("0");
-	  }else{
-			req.session.flash = {};
-			logger.debug("1");
-	  }
-	  next();
-	});
 }
 
 // release resources

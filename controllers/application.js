@@ -46,3 +46,11 @@ function chatroom(req, res) {
     req: req
   });
 }
+
+function page_not_found(req, res) {
+  req.session.controller = "";
+  res.render('page_not_found', {
+    layout: 'application',
+    req: req
+  }); 
+}

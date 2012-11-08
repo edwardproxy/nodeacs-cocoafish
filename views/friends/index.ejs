@@ -1,0 +1,27 @@
+<div id="ctnr">
+	<% if(typeof obj !== "undefined") { %>	
+		<div id="list">
+			<ul>
+				<li class="h">
+					<span class="w15p">ID</span>
+					<span class="w15p">Email</span>
+					<span class="w15p">Updated_at</span>
+					<span class="w15p">More</span>
+					<div class="clr"></div>
+				</li>
+				<% var o = obj["users"] %>
+				<% for(var i=0;i<o.length;i++){ %>
+					<li>
+						<span class="w15p"><%= o[i].id %></span>
+						<span class="w15p"><%= o[i].email %></span>
+						<span class="w15p"><%= (o[i].updated_at)? o[i].updated_at : "n/a" %></span>
+						<span class="w15p">
+							<a href="/friends/<%= o[i].id %>/remove" class='btn fl'>Remove</a>
+						</span>
+						<div class="clr"></div>
+					</li>
+				<% } %>
+			</ul>
+		</div>
+	<% } %>
+</div>

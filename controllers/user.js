@@ -7,7 +7,8 @@ function signup(req, res) {
 		last_name: req.body.last_name,
 		email: req.body.email,
 		password: req.body.password,
-		password_confirmation: req.body.password_confirmation
+		password_confirmation: req.body.password_confirmation,
+    session_id: req.session.user.session_id
 	};
 	
 	ACS.Users.create(data, function(data) {
@@ -58,7 +59,8 @@ function _update(req, res) {
 		username: req.body.username,
 		tags: req.body.tags,
 		password: req.body.password,
-		password_confirmation: req.body.password_confirmation
+		password_confirmation: req.body.password_confirmation,
+    session_id: req.session.user.session_id
 	};
 
   ACS.Users.update(data, function(e) {
@@ -69,7 +71,7 @@ function _update(req, res) {
     }else{
       logger.debug('Error: ' + JSON.stringify(e));
       req.session.msg = e.message;
-      res.redirect('/');
+      res.redirect('/profile');
     }
   }, req, res);
 }

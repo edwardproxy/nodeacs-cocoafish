@@ -75,7 +75,8 @@
             <a href="/friends">Friends</a>
             <ul>
               <li><a href="/friends">index</a></li>
-              <li><a href="/friends/new">create</a></li>
+              <li><a href="/friends/requests">requests</a></li>
+              <li><a href="/friends/new">add</a></li>
             </ul>
           </li>
           <li <% if(req.session.controller === "likes"){ %>class="active"<% } %>>
@@ -89,6 +90,8 @@
             <a href="/messages">Messages</a>
             <ul>
               <li><a href="/messages">index</a></li>
+              <li><a href="/messages/sent">show sent</a></li>
+              <li><a href="/messages/threads">show threads</a></li>
               <li><a href="/messages/new">create</a></li>
             </ul>
           </li>

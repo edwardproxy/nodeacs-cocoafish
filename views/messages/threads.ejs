@@ -1,0 +1,34 @@
+<div id="ctnr">
+	<% if(typeof obj !== "undefined") { %>	
+		<div id="list">
+			<ul>
+				<li class="h">
+					<span class="w15p">ID</span>
+					<span class="w15p">Thread ID</span>
+					<span class="w15p">Subject</span>
+					<span class="w15p">Body</span>
+					<span class="w15p">Updated_at</span>
+					<span class="w20p">More</span>
+					<div class="clr"></div>
+				</li>
+				<% var o = obj["messages"] %>
+				<% for(var i=0;i<o.length;i++){ %>
+					<li>
+						<span class="w15p"><%= o[i].id %></span>
+						<span class="w15p"><%= o[i].thread_id %></span>
+						<span class="w15p"><%= o[i].subject %></span>
+						<span class="w15p"><%= o[i].body %></span>
+						<span class="w15p"><%= (o[i].updated_at)? o[i].updated_at : "n/a" %></span>
+						<span class="w20p">
+							<a href="/messages/<%= o[i].thread_id %>/thread" class='btn fl'>Show Thread</a>
+							<a href="/messages/<%= o[i].id %>/reply" class='btn fl'>Reply</a>
+							<a href="/messages/<%= o[i].id %>/delete" class='btn fl'>Delete</a>
+							<a href="/messages/<%= o[i].thread_id %>/thread/delete" class='btn fl'>Delete Thread</a>
+						</span>
+						<div class="clr"></div>
+					</li>
+				<% } %>
+			</ul>
+		</div>
+	<% } %>
+</div>

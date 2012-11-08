@@ -14,7 +14,7 @@ function login(req, res) {
 			} else {
 				user.name = user.username;
 			}
-			req.session.flash = {msg:"Hello "+user.name+".",r:0};
+			req.session.msg = "Hello " + user.name + ".";
 			user.session_id = data.meta.session_id;
 			req.session.user = user;
 			res.redirect('/');
