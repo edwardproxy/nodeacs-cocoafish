@@ -30,6 +30,19 @@ function start(app) {
 	    errors: err.stack
 	  });
 	});
+
+	// filter for all page?
+	app.use(function(req, res, next){
+	  if(!req.session.user) {
+	    req.session.msg = "Please login first.";
+	    res.render('login', {
+	      layout: 'application',
+	      req: req
+	    });
+	    return;
+	  }
+	  next();
+	});
 }
 
 // release resources

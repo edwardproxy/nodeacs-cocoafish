@@ -10,18 +10,22 @@
 					<div class="clr"></div>
 				</li>
 				<% var o = obj["posts"] %>
-				<% for(var i=0;i<o.length;i++){ %>
-					<li>
-						<span class="obj-id"><%= o[i].id %></span>
-						<span class="name"><%= o[i].title %></span>
-						<span class="list-15"><%= (o[i].updated_at)? o[i].updated_at : "n/a" %></span>
-						<span class="more">
-							<a href="/posts/<%= o[i].id %>" class='btn fl'>Show</a>
-							<a href="/posts/<%= o[i].id %>/edit" class='btn fl'>Edit</a>
-							<a href="/posts/<%= o[i].id %>/delete" class='btn fl'>Delete</a>
-						</span>
-						<div class="clr"></div>
-					</li>
+				<% if(o.length > 0) { %>
+					<% for(var i=0;i<o.length;i++){ %>
+						<li>
+							<span class="obj-id"><%= o[i].id %></span>
+							<span class="name"><%= o[i].title %></span>
+							<span class="list-15"><%= (o[i].updated_at)? o[i].updated_at : "n/a" %></span>
+							<span class="more">
+								<a href="/posts/<%= o[i].id %>" class='btn fl'>Show</a>
+								<a href="/posts/<%= o[i].id %>/edit" class='btn fl'>Edit</a>
+								<a href="/posts/<%= o[i].id %>/delete" class='btn fl'>Delete</a>
+							</span>
+							<div class="clr"></div>
+						</li>
+					<% } %>
+				<% }else{ %>
+					No results found.
 				<% } %>
 			</ul>
 		</div>

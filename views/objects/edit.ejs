@@ -1,0 +1,38 @@
+<% var o = obj[req.params.classname][0] %>
+<style type="text/css">
+.fn{width:150px !important;margin:0 30px 0 0;}
+</style>
+<script type="text/javascript">
+	$(function(){
+		$("#add").click(function(){
+			$("#tool").before("<div><input type='text' name='' class='fn fl' /><input type='text' name='' class='fv fr' /><div class='clr'></div></div>");
+			$(".fn").keyup(function(){
+				$(this).attr('name',$(this).val()+"[n]");
+				$(this).parent().find('.fv').attr('name',$(this).val()+"[v]");
+			});
+		});
+		$(".fn").keyup(function(){
+			$(this).attr('name',$(this).val()+"[n]");
+			$(this).parent().find('.fv').attr('name',$(this).val()+"[v]");
+		});
+	});
+</script>
+<div id="ctnr" class="p10">
+	<div class="form-ctnr">
+		<form id="oform" name="update" action="/objects/<%= req.params.classname %>/<%= req.params.id %>/update" method="post">
+			<div><label>classname:</label><input type="text" name="classname" value="<%= req.params.classname %>"/></div>
+			<div><label>tags:</label><input type="text" name="tags" value="<%= (o.tags) ? o.tags : '' %>"></div>
+			<%
+			  for(var f in o){
+			    if(f.toString() !== "tags" && f.toString() !== "classname" && f.toString() !== "user"){
+			      %> 
+			      	<div><input type='text' name='<%= f %>[n]' class='fn fl' value="<%= f %>"/><input type='text' name='<%= f %>[v]' class='fv fr' value="<%= o[f] %>"/><div class='clr'></div></div>
+			      <%
+			    }
+			  }
+			%>
+			<div id="tool"><span id="add" class="cncl fl">Add</span><input class="fr" type="submit" value="Submit"><a href="/objects/<%= req.params.classname %>" class="cncl fr">Cancel</a></div>
+			<div class="clr"></div>
+		</form>
+	</div>
+</div>

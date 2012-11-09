@@ -1,9 +1,21 @@
 var ACS = require('acs').ACS,
     logger = require('acs').logger;
 
+function _start(req, res) {
+  if(!req.query.classname){
+    req.session.controller = "objects";
+    res.render('objects/class', {
+      req: req,
+      layout: 'layout/application'
+    });
+  }else{
+    res.redirect('/objects/'+req.query.classname);
+  }
+}
+
 function _index(req, res) {
   req.session.controller = "objects";
-  ACS.Objects.query({per_page:1000, order:"-updated_at", classname: 'cars', where:"{\"user_id\":\""+req.session.user.id+"\"}"}, function(e) {
+  ACS.Objects.query({per_page:1000, order:"-updated_at", classname: req.params.classname, where:"{\"user_id\":\""+req.session.user.id+"\"}"}, function(e) {
     if(e.success && e.success === true){
       res.render('objects/index', {
         layout: 'layout/application',
@@ -21,6 +33,7 @@ function _index(req, res) {
 function _show(req, res) {
   req.session.controller = "objects";
   var data = {
+    classname: req.params.classname,
     id: req.params.id
   };
   ACS.Objects.show(data, function(e) {
@@ -48,19 +61,22 @@ function _new(req, res) {
 
 function _create(req, res) {
   req.session.controller = "objects";
-  var data = {
-    classname: 'cars',
-    fields: {
-        make: 'nissan',
-        color: 'blue',
-        year: 2005
+  var a = {};
+  for(var f in req.body){
+    if(f.toString() !== "tags" && f.toString() !== "classname"){
+      a[f] = req.body[f].v;
     }
+  }
+  var data = {
+    classname: req.body.classname,
+    tags: req.body.tags,
+    fields: a
   };
   ACS.Objects.create(data, function(e) {
     if(e.success && e.success === true){
       logger.info('objects#create: ' + JSON.stringify(e));
-      req.session.msg = "Successfully create a place #"+e.objects[0].id;
-      res.redirect('/objects');
+      req.session.msg = "Successfully create an object #"+e[data.classname][0].id;
+      res.redirect('/objects/'+data.classname);
     }else{
       logger.debug('Error: ' + JSON.stringify(e));
       req.session.msg = e.message;
@@ -69,16 +85,65 @@ function _create(req, res) {
   }, req, res);
 }
 
+function _edit(req, res) {
+  req.session.controller = "objects";
+  var data = {
+    classname: req.params.classname,
+    id: req.params.id
+  };
+  ACS.Objects.show(data, function(e) {
+    if(e.success && e.success === true){
+      res.render('objects/edit', {
+        layout: 'layout/application',
+        req: req,
+        obj: e
+      });
+    }else{
+      req.session.msg = e.message;
+      res.redirect('/objects');
+      logger.debug('Error: ' + JSON.stringify(e));
+    }
+  }, req, res);
+}
+
+function _update(req, res) {
+  req.session.controller = "objects";
+  var a = {};
+  for(var f in req.body){
+    if(f.toString() !== "tags" && f.toString() !== "classname"){
+      a[f] = req.body[f].v;
+    }
+  }
+  var data = {
+    id: req.params.id,
+    classname: req.body.classname,
+    tags: req.body.tags,
+    fields: a
+  };
+  ACS.Objects.update(data, function(e) {
+    if(e.success && e.success === true){
+      logger.info('objects#create: ' + JSON.stringify(e));
+      req.session.msg = "Successfully update an object #"+e[data.classname][0].id;
+      res.redirect('/objects/'+data.classname);
+    }else{
+      logger.debug('Error: ' + JSON.stringify(e));
+      req.session.msg = e.message;
+      res.redirect('/objects/edit');
+    }
+  }, req, res);
+}
+
 function _destroy(req, res) {
   req.session.controller = "objects";
   var data = {
+    classname: req.params.classname,
     id: req.params.id,
     session_id: req.session.user.session_id
   };
   ACS.Objects.remove(data, function(e) {
     if(e.success && e.success === true){
       logger.info('objects#destroy: ' + JSON.stringify(e));
-      req.session.msg = "Successfully delete a place #"+req.params.id;
+      req.session.msg = "Successfully delete an object #"+req.params.id;
       res.redirect('/objects');
     }else{
       logger.debug('Error: ' + JSON.stringify(e));

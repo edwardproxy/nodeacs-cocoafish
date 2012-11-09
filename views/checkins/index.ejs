@@ -11,18 +11,22 @@
 					<div class="clr"></div>
 				</li>
 				<% var o = obj["checkins"] %>
-				<% for(var i=0;i<o.length;i++){ %>
-					<li>
-						<span class="obj-id"><%= o[i].id %></span>
-						<span class="name"><%= o[i].message %></span>
-						<span class="obj-id"><% if(typeof o[i].place !== "undefined"){ %><%= o[i].place.id %><% }else{ %>n/a<% } %></span>
-						<span class="obj-id"><% if(typeof o[i].event !== "undefined"){ %><%= o[i].event.id %><% }else{ %>n/a<% } %></span>
-						<span class="more">
-							<a href="/checkins/<%= o[i].id %>" class='btn fl'>Show</a>
-							<a href="/checkins/<%= o[i].id %>/delete" class='btn fl'>Delete</a>
-						</span>
-						<div class="clr"></div>
-					</li>
+				<% if(o.length > 0) { %>
+					<% for(var i=0;i<o.length;i++){ %>
+						<li>
+							<span class="obj-id"><%= o[i].id %></span>
+							<span class="name"><%= o[i].message %></span>
+							<span class="obj-id"><% if(typeof o[i].place !== "undefined"){ %><%= o[i].place.id %><% }else{ %>n/a<% } %></span>
+							<span class="obj-id"><% if(typeof o[i].event !== "undefined"){ %><%= o[i].event.id %><% }else{ %>n/a<% } %></span>
+							<span class="more">
+								<a href="/checkins/<%= o[i].id %>" class='btn fl'>Show</a>
+								<a href="/checkins/<%= o[i].id %>/delete" class='btn fl'>Delete</a>
+							</span>
+							<div class="clr"></div>
+						</li>
+					<% } %>
+				<% }else{ %>
+					No results found.
 				<% } %>
 			</ul>
 		</div>

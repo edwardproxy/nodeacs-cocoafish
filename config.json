@@ -11,6 +11,12 @@
     { "path": "/profile/update", "method": "post", "callback": "user#_update" },
     { "path": "/chatroom", "method": "get", "callback": "application#chatroom" },
 
+    { "path": "/acls", "method": "get", "callback": "acls#_index" },
+    { "path": "/acls/new", "method": "get", "callback": "acls#_new" },
+    { "path": "/acls/create", "method": "post", "callback": "acls#_create" },
+    { "path": "/acls/:id", "method": "get", "callback": "acls#_show" },
+    { "path": "/acls/:id/delete", "method": "get", "callback": "acls#_destroy" },
+
     { "path": "/chats", "method": "get", "callback": "chats#_index" },
     { "path": "/chats/new", "method": "get", "callback": "chats#_new" },
     { "path": "/chats/create", "method": "post", "callback": "chats#_create" },
@@ -64,9 +70,10 @@
     { "path": "/messages/:id/delete", "method": "get", "callback": "messages#_destroy" },
     { "path": "/messages/:id/thread/delete", "method": "get", "callback": "messages#_destroyThread" },
 
-    { "path": "/objects", "method": "get", "callback": "objects#_index" },
+    { "path": "/objects", "method": "get", "callback": "objects#_start" },
     { "path": "/objects/new", "method": "get", "callback": "objects#_new" },
     { "path": "/objects/create", "method": "post", "callback": "objects#_create" },
+    { "path": "/objects/:classname", "method": "get", "callback": "objects#_index" },
     { "path": "/objects/:classname/:id", "method": "get", "callback": "objects#_show" },
     { "path": "/objects/:classname/:id/edit", "method": "get", "callback": "objects#_edit" },
     { "path": "/objects/:classname/:id/update", "method": "post", "callback": "objects#_update" },

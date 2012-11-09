@@ -12,21 +12,27 @@
 					<div class="clr"></div>
 				</li>
 				<% var o = obj["events"] %>
-				<% for(var i=0;i<o.length;i++){ %>
-					<li>
-						<span class="obj-id"><%= o[i].id %></span>
-						<span class="name"><%= o[i].name %></span>
-						<span class="list-15"><%= (o[i].start_time)? o[i].start_time : "n/a" %></span>
-						<span class="list-15"><%= (o[i].duration)? o[i].duration : "n/a" %></span>
-						<span class="list-15"><%= (o[i].updated_at)? o[i].updated_at : "n/a" %></span>
-						<span class="more">
-							<a href="/events/<%= o[i].id %>" class='btn fl'>Show</a>
-							<a href="/events/<%= o[i].id %>/delete" class='btn fl'>Delete</a>
-						</span>
-						<div class="clr"></div>
-					</li>
+				<% if(o.length > 0) { %>
+					<% for(var i=0;i<o.length;i++){ %>
+						<li>
+							<span class="obj-id"><%= o[i].id %></span>
+							<span class="name"><%= o[i].name %></span>
+							<span class="list-15"><%= (o[i].start_time)? o[i].start_time : "n/a" %></span>
+							<span class="list-15"><%= (o[i].duration)? o[i].duration : "n/a" %></span>
+							<span class="list-15"><%= (o[i].updated_at)? o[i].updated_at : "n/a" %></span>
+							<span class="more">
+								<a href="/events/<%= o[i].id %>" class='btn fl'>Show</a>
+								<a href="/events/<%= o[i].id %>/delete" class='btn fl'>Delete</a>
+							</span>
+							<div class="clr"></div>
+						</li>
+					<% } %>
+				<% }else{ %>
+					No results found.
 				<% } %>
 			</ul>
 		</div>
+	<% }else{ %>
+		No results found.
 	<% } %>
 </div>

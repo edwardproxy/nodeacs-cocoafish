@@ -11,9 +11,17 @@
         setTimeout(function(){$("#flash").fadeOut()},3000);
       }
       $(window).resize(function(){
-        $("#ctnr").css('width', parseInt($('body').width()) - 202);
+        if($("#ctnr").hasClass("p10")){
+          $("#ctnr").css('width', parseInt($('body').width()) - 222);  
+        }else{
+          $("#ctnr").css('width', parseInt($('body').width()) - 202);
+        }
       });
-      $("#ctnr").css('width', parseInt($('body').width()) - 202);
+      if($("#ctnr").hasClass("p10")){
+        $("#ctnr").css('width', parseInt($('body').width()) - 222);  
+      }else{
+        $("#ctnr").css('width', parseInt($('body').width()) - 202);
+      }
     });
   </script>
 </head>

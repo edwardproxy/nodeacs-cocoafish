@@ -26,6 +26,7 @@ form{margin:0;padding:0;}
 .w10p{width:10%;}
 .w15p{width:15%;}
 .w20p{width:20%;}
+.w60p{width:60%;}
 .w160{width:160px;}
 .p10{padding:10px !important;}
 
@@ -35,12 +36,13 @@ form{margin:0;padding:0;}
 #login,.form-ctnr{width:500px;padding:30px;border:1px solid #333;background:#f5f5f5;margin:10px;}
 .form-ctnr > form > div{margin:5px 0;}
 #login span,.form-ctnr span{padding:3px;outline:none;}
-#login input,.form-ctnr input{padding:3px;outline:none;border:1px solid #aaa;}
-#login input:focus,.form-ctnr input:focus{border:1px solid #6993c2;}
+input{padding:3px;outline:none;border:1px solid #aaa;}
+input:focus{border:1px solid #6993c2;}
 #login label,.form-ctnr label{display:inline-block;width:200px;font:14px/20px 'Open Sans','helvetcia neue',helvetica,arial,sans-serif;}
 .form-ctnr input[type="file"]{border:0;}
 #login input[type="text"],#login input[type="password"],.form-ctnr input[type="text"],.form-ctnr input[type="password"]{width:300px;}
 #login input[type="submit"],.form-ctnr input[type="submit"]{border:1px solid #333;background:#333;color:#fff;margin:2px;padding:3px;}
+.btn2{border:1px solid #333;background:#333;color:#fff;margin:2px;cursor:pointer;padding:3px;}
 .cncl{display:block;border:1px solid #333;background:#333;color:#fff;margin:2px;cursor:pointer;padding:3px;}
 
 /* flash */
@@ -82,3 +84,7 @@ form{margin:0;padding:0;}
 .s-ctnr{width:500px;padding:30px;border:1px solid #333;background:#f5f5f5;margin:0 10px 10px 20px;}
 .place .name,.place .val{display:block;}
 .place .name{width:150px;}.place .val{width:300px;}
+
+/* custom objects */
+#st{position:relative;padding:5px;margin:0;background:#f5f5f5;border-bottom:1px solid #ccc;height:30px;}
+#tcn{margin:0 0 0 15px;}

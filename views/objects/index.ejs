@@ -1,0 +1,39 @@
+<div id="ctnr" class="st-ctnr">
+	<div id="st">
+	  <form name="start" action="/objects" method="get">
+	    <label>class name:</label><input id="tcn" type="text" name="classname" placeholder="<%= req.params.classname %>"/>
+	    <input type="submit" value="Submit" class="btn2">
+	  </form>
+	</div>
+	<% if(typeof obj !== "undefined") { %>	
+		<div id="list">
+			<ul>
+				<li class="h">
+					<span class="w15p">ID</span>
+					<span class="w60p">Fields</span>
+					<span class="w15p">More</span>
+					<div class="clr"></div>
+				</li>
+				<% var o = obj[req.params.classname] %>
+				<% if(o.length > 0) { %>
+					<% for(var i=0;i<o.length;i++){ %>
+						<li>
+							<span class="w15p"><%= o[i].id %></span>
+							<span class="w60p"><%= JSON.stringify(o[i]) %></span>
+							<span class="w15p">
+								<a href="/objects/<%= req.params.classname %>/<%= o[i].id %>" class='btn fl'>Show</a>
+								<a href="/objects/<%= req.params.classname %>/<%= o[i].id %>/edit" class='btn fl'>Edit</a>
+								<a href="/objects/<%= req.params.classname %>/<%= o[i].id %>/delete" class='btn fl'>Delete</a>
+							</span>
+							<div class="clr"></div>
+						</li>
+					<% } %>
+				<% }else{ %>
+					No results found.
+				<% } %>
+			</ul>
+		</div>
+	<% }else{ %>
+		No results found.
+	<% } %>
+</div>

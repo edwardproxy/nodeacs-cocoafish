@@ -11,22 +11,28 @@
 					<div class="clr"></div>
 				</li>
 				<% var o = obj["messages"] %>
-				<% for(var i=0;i<o.length;i++){ %>
-					<li>
-						<span class="w15p"><%= o[i].id %></span>
-						<span class="w15p"><%= o[i].subject %></span>
-						<span class="w15p"><%= o[i].body %></span>
-						<span class="w15p"><%= (o[i].updated_at)? o[i].updated_at : "n/a" %></span>
-						<span class="w20p">
-							<a href="/messages/<%= o[i].id %>" class='btn fl'>Show</a>
-							<a href="/messages/<%= o[i].thread_id %>/thread" class='btn fl'>Show Thread</a>
-							<a href="/messages/<%= o[i].id %>/reply" class='btn fl'>Reply</a>
-							<a href="/messages/<%= o[i].id %>/delete" class='btn fl'>Delete</a>
-						</span>
-						<div class="clr"></div>
-					</li>
+				<% if(o.length > 0) { %>
+					<% for(var i=0;i<o.length;i++){ %>
+						<li>
+							<span class="w15p"><%= o[i].id %></span>
+							<span class="w15p"><%= o[i].subject %></span>
+							<span class="w15p"><%= o[i].body %></span>
+							<span class="w15p"><%= (o[i].updated_at)? o[i].updated_at : "n/a" %></span>
+							<span class="w20p">
+								<a href="/messages/<%= o[i].id %>" class='btn fl'>Show</a>
+								<a href="/messages/<%= o[i].thread_id %>/thread" class='btn fl'>Show Thread</a>
+								<a href="/messages/<%= o[i].id %>/reply" class='btn fl'>Reply</a>
+								<a href="/messages/<%= o[i].id %>/delete" class='btn fl'>Delete</a>
+							</span>
+							<div class="clr"></div>
+						</li>
+					<% } %>
+				<% }else{ %>
+					No results found.
 				<% } %>
 			</ul>
 		</div>
+	<% }else{ %>
+		No results found.
 	<% } %>
 </div>

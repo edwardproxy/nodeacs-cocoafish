@@ -12,23 +12,27 @@
 					<div class="clr"></div>
 				</li>
 				<% var o = obj["places"] %>
-				<% for(var i=0;i<o.length;i++){ %>
-					<li>
-						<span class="w15p"><%= o[i].id %></span>
-						<span class="w15p"><%= o[i].name %></span>
-						<span class="w15p"><%= o[i].address %></span>
-						<span class="w15p"><%= o[i].city %></span>
-						<span class="w15p"><%= o[i].updated_at.slice(0,19) %></span>
-						<span class="w15p">
-							<a href="/places/<%= o[i].id %>" class='btn fl'>Show</a>
-							<a href="/places/<%= o[i].id %>/edit" class='btn fl'>Edit</a>
-							<a href="/places/<%= o[i].id %>/delete" class='btn fl'>Delete</a>
-							<!-- <form method="delete" action="/places/<%= o[i].id %>">
-					      <input type="submit" class="btn fl" value="Delete" onClick="return confirm('Are you sure you want to delete #<%= o[i].id %>?')">
-					    </form> -->
-						</span>
-						<div class="clr"></div>
-					</li>
+				<% if(o.length > 0) { %>
+					<% for(var i=0;i<o.length;i++){ %>
+						<li>
+							<span class="w15p"><%= o[i].id %></span>
+							<span class="w15p"><%= o[i].name %></span>
+							<span class="w15p"><%= o[i].address %></span>
+							<span class="w15p"><%= o[i].city %></span>
+							<span class="w15p"><%= o[i].updated_at.slice(0,19) %></span>
+							<span class="w15p">
+								<a href="/places/<%= o[i].id %>" class='btn fl'>Show</a>
+								<a href="/places/<%= o[i].id %>/edit" class='btn fl'>Edit</a>
+								<a href="/places/<%= o[i].id %>/delete" class='btn fl'>Delete</a>
+								<!-- <form method="delete" action="/places/<%= o[i].id %>">
+						      <input type="submit" class="btn fl" value="Delete" onClick="return confirm('Are you sure you want to delete #<%= o[i].id %>?')">
+						    </form> -->
+							</span>
+							<div class="clr"></div>
+						</li>
+					<% } %>
+				<% }else{ %>
+					No results found.
 				<% } %>
 			</ul>
 		</div>
