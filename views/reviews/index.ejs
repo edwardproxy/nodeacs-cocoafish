@@ -1,4 +1,11 @@
 <div id="ctnr">
+  <div id="st">
+    <form name="start" action="/reviews" method="get">
+      <label>object type:</label><input id="tcn" type="text" name="type" />
+      <label>object id:</label><input id="tcn" type="text" name="type_id" class="w300" />
+      <input type="submit" value="Submit" class="btn2">
+    </form>
+  </div>
 	<% if(typeof obj !== "undefined") { %>	
 		<div id="list">
 			<ul>
@@ -19,9 +26,9 @@
 							<span class="list-15"><%= o[i].content %></span>
 							<span class="list-15"><%= (o[i].updated_at)? o[i].updated_at : "n/a" %></span>
 							<span class="more">
-								<a href="/posts/<%= o[i].id %>" class='btn fl'>Show</a>
-								<a href="/posts/<%= o[i].id %>/edit" class='btn fl'>Edit</a>
-								<a href="/posts/<%= o[i].id %>/delete" class='btn fl'>Delete</a>
+								<a href="/reviews/<%= req.params.type %>/<%= req.params.type_id %>/<%= o[i].id %>" class='btn fl'>Show</a>
+								<a href="/reviews/<%= req.params.type %>/<%= req.params.type_id %>/<%= o[i].id %>/edit" class='btn fl'>Edit</a>
+								<a href="/reviews/<%= req.params.type %>/<%= req.params.type_id %>/<%= o[i].id %>/delete" class='btn fl'>Delete</a>
 							</span>
 							<div class="clr"></div>
 						</li>
@@ -31,4 +38,5 @@
 				<% } %>
 			</ul>
 		</div>
+	<% } %>
 </div>

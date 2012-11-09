@@ -1,0 +1,25 @@
+<div id="ctnr" class="p10">
+  <div class="form-ctnr">
+    <form name="create" action="create" method="post" enctype="multipart/form-data">
+      <div><label>name:</label><input type="text" name="name" /></div>
+      <div><label>reader ids:</label><input type="text" name="reader_ids" /></div>
+      <div><label>writer ids:</label><input type="text" name="writer_ids" /></div>
+      <div>
+        <label>public read:</label>
+        <select name="public_read">
+          <option value="true">true</option>
+          <option value="false">false</option>
+        </select>
+      </div>
+      <div>
+        <label>public write:</label>
+        <select name="public_write">
+          <option value="true">true</option>
+          <option value="false">false</option>
+        </select>
+      </div>
+      <input class="fr" type="submit" value="Submit"><a href="/posts" class="cncl fr">Cancel</a>
+      <div class="clr"></div>
+    </form>
+  </div>
+</div>

@@ -2,9 +2,9 @@ var ACS = require('acs').ACS,
     logger = require('acs').logger;
 
 function _start(req, res) {
+  req.session.controller = "objects";
   if(!req.query.classname){
-    req.session.controller = "objects";
-    res.render('objects/class', {
+    res.render('objects/start', {
       req: req,
       layout: 'layout/application'
     });

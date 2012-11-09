@@ -38,7 +38,7 @@
         <a href="/" class="l-n-btn">/</a>
         <ul>
           <li <% if(req.session.controller === "acls"){ %>class="active"<% } %>>
-            <a href="#">ACL</a>
+            <a href="/acls">ACLs</a>
             <ul>
               <li><a href="/acls">index</a></li>
               <li><a href="/acls/new">create</a></li>
@@ -145,13 +145,6 @@
               <li><a href="/statuses/new">create</a></li>
             </ul>
           </li>
-          <!-- <li>
-            <a href="#">Users</a>
-            <ul>
-              <li><a href="/users">index</a></li>
-              <li><a href="/users/new">create</a></li>
-            </ul>
-          </li> -->
         </ul>
       </div>
     <% }else{ %>

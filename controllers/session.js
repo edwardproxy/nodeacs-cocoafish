@@ -27,7 +27,7 @@ function login(req, res) {
 		    req: req
 			});
 		}
-	});
+	}, req, res);
 }
 
 function logout(req, res) {

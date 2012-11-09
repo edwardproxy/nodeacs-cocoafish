@@ -14,7 +14,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/ins429/nodeacs-cocoafish"
   },
   "preferGlobal": false,
   "dependencies": {
