@@ -7,8 +7,7 @@ function signup(req, res) {
 		last_name: req.body.last_name,
 		email: req.body.email,
 		password: req.body.password,
-		password_confirmation: req.body.password_confirmation,
-    session_id: req.session.user.session_id
+		password_confirmation: req.body.password_confirmation
 	};
 	
 	ACS.Users.create(data, function(data) {

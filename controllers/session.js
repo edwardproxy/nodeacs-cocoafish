@@ -27,10 +27,12 @@ function login(req, res) {
 		    req: req
 			});
 		}
-	}, req, res);
+	});
 }
 
 function logout(req, res) {
-	delete req.session.user;
+	ACS.Users.logout(function(data) {
+		delete req.session.user;
+	}, req, res);
 	res.redirect('/');
 }
