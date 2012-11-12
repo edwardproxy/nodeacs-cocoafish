@@ -11,7 +11,7 @@ function _index(req, res) {
         req: req
       });
     }else{
-      req.session.msg = e.message;
+      req.session.flash = {msg:e.message, r:0};
       res.redirect('/');
       logger.debug('Error: ' + JSON.stringify(e));
     }
@@ -31,7 +31,7 @@ function _show(req, res) {
         obj: e
       });
     }else{
-      req.session.msg = e.message;
+      req.session.flash = {msg:e.message, r:0};
       res.redirect('/photos');
       logger.debug('Error: ' + JSON.stringify(e));
     }
@@ -57,11 +57,11 @@ function _create(req, res) {
   ACS.Photos.create(data, function(e) {
     if(e.success && e.success === true){
       logger.info('photos#create: ' + JSON.stringify(e));
-      req.session.msg = "Successfully create a photo #"+e.photos[0].id;
+      req.session.flash = {msg:"Successfully create a photo #"+e.photos[0].id, r:0};
       res.redirect('/photos');
     }else{
       logger.debug('Error: ' + JSON.stringify(e));
-      req.session.msg = e.message;
+      req.session.flash = {msg:e.message, r:0};
       res.redirect('/photos/new');
     }
   }, req, res);
@@ -81,7 +81,7 @@ function _edit(req, res) {
       });
     }else{
       logger.debug('Error: ' + JSON.stringify(e));
-      req.session.msg = e.message;
+      req.session.flash = {msg:e.message, r:0};
       res.redirect('/photos');
     }
   }, req, res);
@@ -109,11 +109,11 @@ function _update(req, res) {
   ACS.Photos.update(data, function(e) {
     if(e.success && e.success === true){
       logger.info('photos#update: ' + JSON.stringify(e));
-      req.session.msg = "Successfully update a photo #"+e.photos[0].id+", photo update could take couple seconds.";
+      req.session.flash = {msg:"Successfully update a photo #"+e.photos[0].id+", photo update could take couple seconds.", r:0};
       res.redirect('/photos');
     }else{
       logger.debug('Error: ' + JSON.stringify(e));
-      req.session.msg = e.message;
+      req.session.flash = {msg:e.message, r:0};
       res.redirect('/photos/'+req.params.id+'/edit');
     }
   }, req, res);
@@ -128,11 +128,11 @@ function _destroy(req, res) {
   ACS.Photos.remove(data, function(e) {
     if(e.success && e.success === true){
       logger.info('photos#destroy: ' + JSON.stringify(e));
-      req.session.msg = "Successfully delete a photo #"+req.params.id;
+      req.session.flash = {msg:"Successfully delete a photo #"+req.params.id, r:0};
       res.redirect('/photos');
     }else{
       logger.debug('Error: ' + JSON.stringify(e));
-      req.session.msg = e.message;
+      req.session.flash = {msg:e.message, r:0};
       res.redirect('/photos');
     }
   }, req, res);

@@ -11,7 +11,7 @@ function _index(req, res) {
         req: req
       });
     }else{
-      req.session.msg = e.message;
+      req.session.flash = {msg:e.message, r:0};
       res.redirect('/');
       logger.debug('Error: ' + JSON.stringify(e));
     }
@@ -28,7 +28,7 @@ function _requests(req, res) {
         req: req
       });
     }else{
-      req.session.msg = e.message;
+      req.session.flash = {msg:e.message, r:0};
       res.redirect('/');
       logger.debug('Error: ' + JSON.stringify(e));
     }
@@ -52,11 +52,11 @@ function _add(req, res) {
   ACS.Friends.add(data, function(e) {
     if(e.success && e.success === true){
       logger.info('friends#add: ' + JSON.stringify(e));
-      req.session.msg = "Friend(s) added";
+      req.session.flash = {msg:"Friend(s) added", r:0};
       res.redirect('/friends');
     }else{
       logger.debug('Error: ' + JSON.stringify(e));
-      req.session.msg = e.message;
+      req.session.flash = {msg:e.message, r:0};
       res.redirect('/friends/new');
     }
   }, req, res);
@@ -71,11 +71,11 @@ function _approve(req, res) {
   ACS.Friends.approve(data, function(e) {
     if(e.success && e.success === true){
       logger.info('friends#approve: ' + JSON.stringify(e));
-      req.session.msg = "Friend(s) approved.";
+      req.session.flash = {msg:"Friend(s) approved.", r:0};
       res.redirect('/friends');
     }else{
       logger.debug('Error: ' + JSON.stringify(e));
-      req.session.msg = e.message;
+      req.session.flash = {msg:e.message, r:0};
       res.redirect('/friends');
     }
   }, req, res);
@@ -90,11 +90,11 @@ function _remove(req, res) {
   ACS.Friends.remove(data, function(e) {
     if(e.success && e.success === true){
       logger.info('friends#remove: ' + JSON.stringify(e));
-      req.session.msg = "Friend(s) removed";
+      req.session.flash = {msg:"Friend(s) removed", r:0};
       res.redirect('/friends');
     }else{
       logger.debug('Error: ' + JSON.stringify(e));
-      req.session.msg = e.message;
+      req.session.flash = {msg:e.message, r:0};
       res.redirect('/friends');
     }
   }, req, res);

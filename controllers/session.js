@@ -14,13 +14,13 @@ function login(req, res) {
 			} else {
 				user.name = user.username;
 			}
-			req.session.msg = "Hello " + user.name + ".";
+			req.session.flash = {msg:"Hello " + user.name + ".", r:0};
 			user.session_id = data.meta.session_id;
 			req.session.user = user;
 			res.redirect('/');
 			logger.info('User logged in: ' + user.name);
 		} else {
-			req.session.msg = data.message;
+			req.session.flash = {msg:data.message, r:0};
 			res.render('login', {
 				layout: 'application',
 		    user: req.session.user,
@@ -31,8 +31,10 @@ function login(req, res) {
 }
 
 function logout(req, res) {
-	ACS.Users.logout(function(data) {
-		delete req.session.user;
-	}, req, res);
+	// ACS.Users.logout(function(data) {
+	// 	delete req.session.user;
+	// }, req, res);
+	delete req.session.user;
+	req.session.flash = {msg:"Successfully logged out.", r:0};
 	res.redirect('/');
 }

@@ -11,7 +11,7 @@ function _index(req, res) {
         req: req
       });
     }else{
-      req.session.msg = e.message;
+      req.session.flash = {msg:e.message, r:0};
       res.redirect('/');
       logger.debug('Error: ' + JSON.stringify(e));
     }
@@ -31,7 +31,7 @@ function _show(req, res) {
         obj: e
       });
     }else{
-      req.session.msg = e.message;
+      req.session.flash = {msg:e.message, r:0};
       res.redirect('/files');
       logger.debug('Error: ' + JSON.stringify(e));
     }
@@ -57,11 +57,11 @@ function _create(req, res) {
   ACS.Files.create(data, function(e) {
     if(e.success && e.success === true){
       logger.info('files#create: ' + JSON.stringify(e));
-      req.session.msg = "Successfully create a file #"+e.files[0].id;
+      req.session.flash = {msg:"Successfully create a file #"+e.files[0].id, r:0};
       res.redirect('/files');
     }else{
       logger.debug('Error: ' + JSON.stringify(e));
-      req.session.msg = e.message;
+      req.session.flash = {msg:e.message, r:0};
       res.redirect('/files/new');
     }
   }, req, res);
@@ -81,7 +81,7 @@ function _edit(req, res) {
       });
     }else{
       logger.debug('Error: ' + JSON.stringify(e));
-      req.session.msg = e.message;
+      req.session.flash = {msg:e.message, r:0};
       res.redirect('/files');
     }
   }, req, res);
@@ -108,11 +108,11 @@ function _update(req, res) {
   ACS.Files.update(data, function(e) {
     if(e.success && e.success === true){
       logger.info('files#update: ' + JSON.stringify(e));
-      req.session.msg = "Successfully update a file #"+e.files[0].id;
+      req.session.flash = {msg:"Successfully update a file #"+e.files[0].id, r:0};
       res.redirect('/files');
     }else{
       logger.debug('Error: ' + JSON.stringify(e));
-      req.session.msg = e.message;
+      req.session.flash = {msg:e.message, r:0};
       res.redirect('/files/'+req.params.id+'/edit');
     }
   }, req, res);
@@ -127,11 +127,11 @@ function _destroy(req, res) {
   ACS.Files.remove(data, function(e) {
     if(e.success && e.success === true){
       logger.info('files#destroy: ' + JSON.stringify(e));
-      req.session.msg = "Successfully delete a file #"+req.params.id;
+      req.session.flash = {msg:"Successfully delete a file #"+req.params.id, r:0};
       res.redirect('/files');
     }else{
       logger.debug('Error: ' + JSON.stringify(e));
-      req.session.msg = e.message;
+      req.session.flash = {msg:e.message, r:0};
       res.redirect('/files');
     }
   }, req, res);

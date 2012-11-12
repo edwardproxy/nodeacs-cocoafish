@@ -23,7 +23,7 @@ function login(req, res) {
       req: req
     });
   }else{
-    req.session.msg = "You are already logged in.";
+    req.session.flash = {msg:"You are already logged in.", r:0};
     res.render('index', {
       layout: 'application',
       req: req

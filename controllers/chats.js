@@ -11,7 +11,7 @@ function _index(req, res) {
         req: req
       });
     }else{
-      req.session.msg = e.message;
+      req.session.flash = {msg:e.message, r:0};
       res.redirect('/');
       logger.debug('Error: ' + JSON.stringify(e));
     }
@@ -36,11 +36,11 @@ function _create(req, res) {
   ACS.Chats.create(data, function(e) {
     if(e.success && e.success === true){
       logger.info('chats#create: ' + JSON.stringify(e));
-      req.session.msg = "Successfully create a chats #"+e.chats[0].id;
+      req.session.flash = {msg:"Successfully create a chats #"+e.chats[0].id, r:0};
       res.redirect('/chats');
     }else{
       logger.debug('Error: ' + JSON.stringify(e));
-      req.session.msg = e.message;
+      req.session.flash = {msg:e.message, r:0};
       res.redirect('/chats/new');
     }
   }, req, res);

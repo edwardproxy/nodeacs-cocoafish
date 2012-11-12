@@ -29,7 +29,7 @@ function _index(req, res) {
         req: req
       });
     }else{
-      req.session.msg = e.message;
+      req.session.flash = {msg:e.message, r:0};
       res.redirect('/');
       logger.debug('Error: ' + JSON.stringify(e));
     }
@@ -50,7 +50,7 @@ function _show(req, res) {
         obj: e
       });
     }else{
-      req.session.msg = e.message;
+      req.session.flash = {msg:e.message, r:0};
       res.redirect('/reviews');
       logger.debug('Error: ' + JSON.stringify(e));
     }
@@ -78,11 +78,11 @@ function _create(req, res) {
   ACS.Reviews.create(data, function(e) {
     if(e.success && e.success === true){
       logger.info('reviews#create: ' + JSON.stringify(e));
-      req.session.msg = "Successfully create a review #"+e.reviews[0].id;
+      req.session.flash = {msg:"Successfully create a review #"+e.reviews[0].id, r:0};
       res.redirect('/reviews'+req.body.type+'/'+req.body.type_id)
     }else{
       logger.debug('Error: ' + JSON.stringify(e));
-      req.session.msg = e.message;
+      req.session.flash = {msg:e.message, r:0};
       res.redirect('/reviews/new');
     }
   }, req, res);
@@ -103,7 +103,7 @@ function _edit(req, res) {
       });
     }else{
       logger.debug('Error: ' + JSON.stringify(e));
-      req.session.msg = e.message;
+      req.session.flash = {msg:e.message, r:0};
       res.redirect('/reviews');
     }
   }, req, res);
@@ -122,11 +122,11 @@ function _update(req, res) {
   ACS.Reviews.update(data, function(e) {
     if(e.success && e.success === true){
       logger.info('reviews#update: ' + JSON.stringify(e));
-      req.session.msg = "Successfully update a review #"+e.reviews[0].id;
+      req.session.flash = {msg:"Successfully update a review #"+e.reviews[0].id, r:0};
       res.redirect('/reviews'+req.params.type+'/'+req.params.type_id);
     }else{
       logger.debug('Error: ' + JSON.stringify(e));
-      req.session.msg = e.message;
+      req.session.flash = {msg:e.message, r:0};
       res.redirect('/reviews/'+req.params.id+'/edit');
     }
   }, req, res);
@@ -141,11 +141,11 @@ function _destroy(req, res) {
   ACS.Reviews.remove(data, function(e) {
     if(e.success && e.success === true){
       logger.info('reviews#destroy: ' + JSON.stringify(e));
-      req.session.msg = "Successfully delete a review #"+req.params.id;
+      req.session.flash = {msg:"Successfully delete a review #"+req.params.id, r:0};
       res.redirect('/reviews');
     }else{
       logger.debug('Error: ' + JSON.stringify(e));
-      req.session.msg = e.message;
+      req.session.flash = {msg:e.message, r:0};
       res.redirect('/reviews');
     }
   }, req, res);

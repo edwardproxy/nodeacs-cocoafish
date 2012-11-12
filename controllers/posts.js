@@ -11,7 +11,7 @@ function _index(req, res) {
         req: req
       });
     }else{
-      req.session.msg = e.message;
+      req.session.flash = {msg:e.message, r:0};
       res.redirect('/');
       logger.debug('Error: ' + JSON.stringify(e));
     }
@@ -31,7 +31,7 @@ function _show(req, res) {
         obj: e
       });
     }else{
-      req.session.msg = e.message;
+      req.session.flash = {msg:e.message, r:0};
       res.redirect('/posts');
       logger.debug('Error: ' + JSON.stringify(e));
     }
@@ -57,11 +57,11 @@ function _create(req, res) {
   ACS.Posts.create(data, function(e) {
     if(e.success && e.success === true){
       logger.info('posts#create: ' + JSON.stringify(e));
-      req.session.msg = "Successfully create a post #"+e.posts[0].id;
+      req.session.flash = {msg:"Successfully create a post #"+e.posts[0].id, r:0};
       res.redirect('/posts');
     }else{
       logger.debug('Error: ' + JSON.stringify(e));
-      req.session.msg = e.message;
+      req.session.flash = {msg:e.message, r:0};
       res.redirect('/posts/new');
     }
   }, req, res);
@@ -81,7 +81,7 @@ function _edit(req, res) {
       });
     }else{
       logger.debug('Error: ' + JSON.stringify(e));
-      req.session.msg = e.message;
+      req.session.flash = {msg:e.message, r:0};
       res.redirect('/posts');
     }
   }, req, res);
@@ -100,11 +100,11 @@ function _update(req, res) {
   ACS.Posts.update(data, function(e) {
     if(e.success && e.success === true){
       logger.info('posts#update: ' + JSON.stringify(e));
-      req.session.msg = "Successfully update a post #"+e.posts[0].id;
+      req.session.flash = {msg:"Successfully update a post #"+e.posts[0].id, r:0};
       res.redirect('/posts');
     }else{
       logger.debug('Error: ' + JSON.stringify(e));
-      req.session.msg = e.message;
+      req.session.flash = {msg:e.message, r:0};
       res.redirect('/posts/'+req.params.id+'/edit');
     }
   }, req, res);
@@ -119,11 +119,11 @@ function _destroy(req, res) {
   ACS.Posts.remove(data, function(e) {
     if(e.success && e.success === true){
       logger.info('posts#destroy: ' + JSON.stringify(e));
-      req.session.msg = "Successfully delete a post #"+req.params.id;
+      req.session.flash = {msg:"Successfully delete a post #"+req.params.id, r:0};
       res.redirect('/posts');
     }else{
       logger.debug('Error: ' + JSON.stringify(e));
-      req.session.msg = e.message;
+      req.session.flash = {msg:e.message, r:0};
       res.redirect('/posts');
     }
   }, req, res);

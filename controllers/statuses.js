@@ -11,7 +11,7 @@ function _index(req, res) {
         req: req
       });
     }else{
-      req.session.msg = e.message;
+      req.session.flash = {msg:e.message, r:0};
       res.redirect('/');
       logger.debug('Error: ' + JSON.stringify(e));
     }
@@ -36,11 +36,11 @@ function _create(req, res) {
   ACS.Statuses.create(data, function(e) {
     if(e.success && e.success === true){
       logger.info('statuses#create: ' + JSON.stringify(e));
-      req.session.msg = "Successfully create a statuses #"+e.statuses[0].id;
+      req.session.flash = {msg:"Successfully create a statuses #"+e.statuses[0].id, r:0};
       res.redirect('/statuses');
     }else{
       logger.debug('Error: ' + JSON.stringify(e));
-      req.session.msg = e.message;
+      req.session.flash = {msg:e.message, r:0};
       res.redirect('/statuses/new');
     }
   }, req, res);

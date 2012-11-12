@@ -121,7 +121,7 @@
   "filters":
   [
   	 { "path": "/chatroom", "callback": "session_filter#checkSession" },
-     { "path": "*", "callback": "session_filter#checkUserSession" }
+     { "path": "/", "callback": "session_filter#checkUserSession" }
   ],
   "websockets":
   [

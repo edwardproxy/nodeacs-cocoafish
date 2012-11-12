@@ -26,8 +26,8 @@
   </script>
 </head>
 <body>
-  <% if(req.session.msg){ %>
-    <div id="flash"><%= req.session.msg %></div>
+  <% if(req.session.flash && req.session.flash.msg){ %>
+    <div id="flash"><%= req.session.flash.msg %></div>
   <% } %>
   <div id="ctr">
     <% if(req.session.user) { %>
@@ -87,13 +87,13 @@
               <li><a href="/friends/new">add</a></li>
             </ul>
           </li>
-          <li <% if(req.session.controller === "likes"){ %>class="active"<% } %>>
+          <!-- <li <% if(req.session.controller === "likes"){ %>class="active"<% } %>>
             <a href="/likes">Likes</a>
             <ul>
               <li><a href="/likes">index</a></li>
               <li><a href="/likes/new">create</a></li>
             </ul>
-          </li>
+          </li> -->
           <li <% if(req.session.controller === "messages"){ %>class="active"<% } %>>
             <a href="/messages">Messages</a>
             <ul>

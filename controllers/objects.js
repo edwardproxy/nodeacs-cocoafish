@@ -23,7 +23,7 @@ function _index(req, res) {
         req: req
       });
     }else{
-      req.session.msg = e.message;
+      req.session.flash = {msg:e.message, r:0};
       res.redirect('/');
       logger.debug('Error: ' + JSON.stringify(e));
     }
@@ -44,7 +44,7 @@ function _show(req, res) {
         obj: e
       });
     }else{
-      req.session.msg = e.message;
+      req.session.flash = {msg:e.message, r:0};
       res.redirect('/objects');
       logger.debug('Error: ' + JSON.stringify(e));
     }
@@ -75,11 +75,11 @@ function _create(req, res) {
   ACS.Objects.create(data, function(e) {
     if(e.success && e.success === true){
       logger.info('objects#create: ' + JSON.stringify(e));
-      req.session.msg = "Successfully create an object #"+e[data.classname][0].id;
+      req.session.flash = {msg:"Successfully create an object #"+e[data.classname][0].id, r:0};
       res.redirect('/objects/'+data.classname);
     }else{
       logger.debug('Error: ' + JSON.stringify(e));
-      req.session.msg = e.message;
+      req.session.flash = {msg:e.message, r:0};
       res.redirect('/objects/new');
     }
   }, req, res);
@@ -99,7 +99,7 @@ function _edit(req, res) {
         obj: e
       });
     }else{
-      req.session.msg = e.message;
+      req.session.flash = {msg:e.message, r:0};
       res.redirect('/objects');
       logger.debug('Error: ' + JSON.stringify(e));
     }
@@ -123,11 +123,11 @@ function _update(req, res) {
   ACS.Objects.update(data, function(e) {
     if(e.success && e.success === true){
       logger.info('objects#create: ' + JSON.stringify(e));
-      req.session.msg = "Successfully update an object #"+e[data.classname][0].id;
+      req.session.flash = {msg:"Successfully update an object #"+e[data.classname][0].id, r:0};
       res.redirect('/objects/'+data.classname);
     }else{
       logger.debug('Error: ' + JSON.stringify(e));
-      req.session.msg = e.message;
+      req.session.flash = {msg:e.message, r:0};
       res.redirect('/objects/edit');
     }
   }, req, res);
@@ -143,11 +143,11 @@ function _destroy(req, res) {
   ACS.Objects.remove(data, function(e) {
     if(e.success && e.success === true){
       logger.info('objects#destroy: ' + JSON.stringify(e));
-      req.session.msg = "Successfully delete an object #"+req.params.id;
+      req.session.flash = {msg:"Successfully delete an object #"+req.params.id, r:0};
       res.redirect('/objects');
     }else{
       logger.debug('Error: ' + JSON.stringify(e));
-      req.session.msg = e.message;
+      req.session.flash = {msg:e.message, r:0};
       res.redirect('/objects');
     }
   }, req, res);

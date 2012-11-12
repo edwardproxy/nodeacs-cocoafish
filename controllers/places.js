@@ -11,7 +11,7 @@ function _index(req, res) {
         req: req
       });
     }else{
-      req.session.msg = e.message;
+      req.session.flash = {msg:e.message, r:0};
       res.redirect('/');
       logger.debug('Error: ' + JSON.stringify(e));
     }
@@ -31,7 +31,7 @@ function _show(req, res) {
         obj: e
       });
     }else{
-      req.session.msg = e.message;
+      req.session.flash = {msg:e.message, r:0};
       res.redirect('/places');
       logger.debug('Error: ' + JSON.stringify(e));
     }
@@ -59,11 +59,11 @@ function _create(req, res) {
   ACS.Places.create(data, function(e) {
     if(e.success && e.success === true){
       logger.info('places#create: ' + JSON.stringify(e));
-      req.session.msg = "Successfully create a place #"+e.places[0].id;
+      req.session.flash = {msg:"Successfully create a place #"+e.places[0].id, r:0};
       res.redirect('/places');
     }else{
       logger.debug('Error: ' + JSON.stringify(e));
-      req.session.msg = e.message;
+      req.session.flash = {msg:e.message, r:0};
       res.redirect('/places/new');
     }
   }, req, res);
@@ -83,7 +83,7 @@ function _edit(req, res) {
       });
     }else{
       logger.debug('Error: ' + JSON.stringify(e));
-      req.session.msg = e.message;
+      req.session.flash = {msg:e.message, r:0};
       res.redirect('/places');
     }
   }, req, res);
@@ -103,11 +103,11 @@ function _update(req, res) {
   ACS.Places.update(data, function(e) {
     if(e.success && e.success === true){
       logger.info('places#update: ' + JSON.stringify(e));
-      req.session.msg = "Successfully update a place #"+e.places[0].id;
+      req.session.flash = {msg:"Successfully update a place #"+e.places[0].id, r:0};
       res.redirect('/places');
     }else{
       logger.debug('Error: ' + JSON.stringify(e));
-      req.session.msg = e.message;
+      req.session.flash = {msg:e.message, r:0};
       res.redirect('/places/'+req.params.id+'/edit');
     }
   }, req, res);
@@ -122,11 +122,11 @@ function _destroy(req, res) {
   ACS.Places.remove(data, function(e) {
     if(e.success && e.success === true){
       logger.info('places#destroy: ' + JSON.stringify(e));
-      req.session.msg = "Successfully delete a place #"+req.params.id;
+      req.session.flash = {msg:"Successfully delete a place #"+req.params.id, r:0};
       res.redirect('/places');
     }else{
       logger.debug('Error: ' + JSON.stringify(e));
-      req.session.msg = e.message;
+      req.session.flash = {msg:e.message, r:0};
       res.redirect('/places');
     }
   }, req, res);

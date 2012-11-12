@@ -11,7 +11,7 @@ function _index(req, res) {
         req: req
       });
     }else{
-      req.session.msg = e.message;
+      req.session.flash = {msg:e.message, r:0};
       res.redirect('/');
       logger.debug('Error: ' + JSON.stringify(e));
     }
@@ -31,7 +31,7 @@ function _show(req, res) {
         obj: e
       });
     }else{
-      req.session.msg = e.message;
+      req.session.flash = {msg:e.message, r:0};
       res.redirect('/collections');
       logger.debug('Error: ' + JSON.stringify(e));
     }
@@ -59,11 +59,11 @@ function _create(req, res) {
   ACS.PhotoCollections.create(data, function(e) {
     if(e.success && e.success === true){
       logger.info('collections#create: ' + JSON.stringify(e));
-      req.session.msg = "Successfully create a collection #"+e.collections[0].id;
+      req.session.flash = {msg:"Successfully create a collection #"+e.collections[0].id, r:0};
       res.redirect('/collections');
     }else{
       logger.debug('Error: ' + JSON.stringify(e));
-      req.session.msg = e.message;
+      req.session.flash = {msg:e.message, r:0};
       res.redirect('/collections/new');
     }
   }, req, res);
@@ -83,7 +83,7 @@ function _edit(req, res) {
       });
     }else{
       logger.debug('Error: ' + JSON.stringify(e));
-      req.session.msg = e.message;
+      req.session.flash = {msg:e.message, r:0};
       res.redirect('/collections');
     }
   }, req, res);
@@ -103,11 +103,11 @@ function _update(req, res) {
   ACS.PhotoCollections.update(data, function(e) {
     if(e.success && e.success === true){
       logger.info('collections#update: ' + JSON.stringify(e));
-      req.session.msg = "Successfully update a collection #"+e.collections[0].id;
+      req.session.flash = {msg:"Successfully update a collection #"+e.collections[0].id, r:0};
       res.redirect('/collections');
     }else{
       logger.debug('Error: ' + JSON.stringify(e));
-      req.session.msg = e.message;
+      req.session.flash = {msg:e.message, r:0};
       res.redirect('/collections/'+req.params.id+'/edit');
     }
   }, req, res);
@@ -122,11 +122,11 @@ function _destroy(req, res) {
   ACS.PhotoCollections.remove(data, function(e) {
     if(e.success && e.success === true){
       logger.info('collections#destroy: ' + JSON.stringify(e));
-      req.session.msg = "Successfully delete a collection #"+req.params.id;
+      req.session.flash = {msg:"Successfully delete a collection #"+req.params.id, r:0};
       res.redirect('/collections');
     }else{
       logger.debug('Error: ' + JSON.stringify(e));
-      req.session.msg = e.message;
+      req.session.flash = {msg:e.message, r:0};
       res.redirect('/collections');
     }
   }, req, res);

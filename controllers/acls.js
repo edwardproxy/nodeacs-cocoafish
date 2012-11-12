@@ -28,7 +28,7 @@ function _show(req, res) {
         obj: e
       });
     }else{
-      req.session.msg = e.message;
+      req.session.flash = {msg: e.message, r:0};
       res.redirect('/acls');
       logger.debug('Error: ' + JSON.stringify(e));
     }
@@ -56,11 +56,11 @@ function _create(req, res) {
   ACS.ACLs.create(data, function(e) {
     if(e.success && e.success === true){
       logger.info('acls#create: ' + JSON.stringify(e));
-      req.session.msg = "Successfully create an ACL #"+e.acls[0].id;
+      req.session.flash = {msg: "Successfully create an ACL #"+e.acls[0].id, r:0};
       res.redirect('/acls');
     }else{
       logger.debug('Error: ' + JSON.stringify(e));
-      req.session.msg = e.message;
+      req.session.flash = {msg: e.message, r:0};
       res.redirect('/acls/new');
     }
   }, req, res);
@@ -86,7 +86,7 @@ function _edit(req, res) {
       });
     }else{
       logger.debug('Error: ' + JSON.stringify(e));
-      req.session.msg = e.message;
+      req.session.flash = {msg: e.message, r:0};
       res.redirect('/acls');
     }
   }, req, res);
@@ -105,11 +105,11 @@ function _update(req, res) {
   ACS.ACLs.update(data, function(e) {
     if(e.success && e.success === true){
       logger.info('acls#update: ' + JSON.stringify(e));
-      req.session.msg = "Successfully update a post #"+e.acls[0].id;
+      req.session.flash = {msg: "Successfully update a post #"+e.acls[0].id, r:0};
       res.redirect('/acls');
     }else{
       logger.debug('Error: ' + JSON.stringify(e));
-      req.session.msg = e.message;
+      req.session.flash = {msg: e.message, r:0};
       res.redirect('/acls/'+req.params.id+'/edit');
     }
   }, req, res);
@@ -124,11 +124,11 @@ function _destroy(req, res) {
   ACS.ACLs.remove(data, function(e) {
     if(e.success && e.success === true){
       logger.info('acls#destroy: ' + JSON.stringify(e));
-      req.session.msg = "Successfully delete a post #"+req.params.id;
+      req.session.flash = {msg: "Successfully delete a post #"+req.params.id, r:0};
       res.redirect('/acls');
     }else{
       logger.debug('Error: ' + JSON.stringify(e));
-      req.session.msg = e.message;
+      req.session.flash = {msg: e.message, r:0};
       res.redirect('/acls');
     }
   }, req, res);

@@ -11,7 +11,7 @@ function _index(req, res) {
         req: req
       });
     }else{
-      req.session.msg = e.message;
+      req.session.flash = {msg:e.message, r:0};
       res.redirect('/');
       logger.debug('Error: ' + JSON.stringify(e));
     }
@@ -32,7 +32,7 @@ function _show(req, res) {
         obj: e
       });
     }else{
-      req.session.msg = e.message;
+      req.session.flash = {msg:e.message, r:0};
       res.redirect('/messages');
       logger.debug('Error: ' + JSON.stringify(e));
     }
@@ -49,7 +49,7 @@ function _sent(req, res) {
         req: req
       });
     }else{
-      req.session.msg = e.message;
+      req.session.flash = {msg:e.message, r:0};
       res.redirect('/');
       logger.debug('Error: ' + JSON.stringify(e));
     }
@@ -70,7 +70,7 @@ function _thread(req, res) {
         obj: e
       });
     }else{
-      req.session.msg = e.message;
+      req.session.flash = {msg:e.message, r:0};
       res.redirect('/messages');
       logger.debug('Error: ' + JSON.stringify(e));
     }
@@ -87,7 +87,7 @@ function _threads(req, res) {
         req: req
       });
     }else{
-      req.session.msg = e.message;
+      req.session.flash = {msg:e.message, r:0};
       res.redirect('/');
       logger.debug('Error: ' + JSON.stringify(e));
     }
@@ -121,11 +121,11 @@ function _create(req, res) {
   ACS.Messages.create(data, function(e) {
     if(e.success && e.success === true){
       logger.info('messages#create: ' + JSON.stringify(e));
-      req.session.msg = "Successfully create a messages #"+e.messages[0].id;
+      req.session.flash = {msg:"Successfully create a messages #"+e.messages[0].id, r:0};
       res.redirect('/messages');
     }else{
       logger.debug('Error: ' + JSON.stringify(e));
-      req.session.msg = e.message;
+      req.session.flash = {msg:e.message, r:0};
       res.redirect('/messages/new');
     }
   }, req, res);
@@ -142,11 +142,11 @@ function _reply(req, res) {
   ACS.Messages.reply(data, function(e) {
     if(e.success && e.success === true){
       logger.info('messages#create: ' + JSON.stringify(e));
-      req.session.msg = "Successfully replied a message #"+e.messages[0].id;
+      req.session.flash = {msg:"Successfully replied a message #"+e.messages[0].id, r:0};
       res.redirect('/messages');
     }else{
       logger.debug('Error: ' + JSON.stringify(e));
-      req.session.msg = e.message;
+      req.session.flash = {msg:e.message, r:0};
       res.redirect('/messages/new');
     }
   }, req, res);
@@ -161,11 +161,11 @@ function _destroy(req, res) {
   ACS.Messages.remove(data, function(e) {
     if(e.success && e.success === true){
       logger.info('messages#destroy: ' + JSON.stringify(e));
-      req.session.msg = "Successfully delete a message.";
+      req.session.flash = {msg:"Successfully delete a message.", r:0};
       res.redirect('/messages');
     }else{
       logger.debug('Error: ' + JSON.stringify(e));
-      req.session.msg = e.message;
+      req.session.flash = {msg:e.message, r:0};
       res.redirect('/messages');
     }
   }, req, res);
@@ -180,11 +180,11 @@ function _destroyThread(req, res) {
   ACS.Messages.removeThread(data, function(e) {
     if(e.success && e.success === true){
       logger.info('messages#destroyThread: ' + JSON.stringify(e));
-      req.session.msg = "Successfully delete a thread.";
+      req.session.flash = {msg:"Successfully delete a thread.", r:0};
       res.redirect('/messages');
     }else{
       logger.debug('Error: ' + JSON.stringify(e));
-      req.session.msg = e.message;
+      req.session.flash = {msg:e.message, r:0};
       res.redirect('/messages');
     }
   }, req, res);

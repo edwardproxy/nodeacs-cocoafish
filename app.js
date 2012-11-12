@@ -30,7 +30,6 @@ function start(app) {
 	    errors: err.stack
 	  });
 	});
-
 }
 
 // release resources

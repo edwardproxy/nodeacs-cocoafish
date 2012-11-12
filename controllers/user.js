@@ -22,7 +22,7 @@ function signup(req, res) {
 			res.redirect('/');
 			logger.info('Created user: ' + user.name);
 		} else {
-			req.session.msg = data.message;
+			req.session.flash = {msg:data.message, r:0};
 	    res.render('signup', {
 	      layout: 'application',
 	      req: req
@@ -43,7 +43,7 @@ function profile(req, res) {
 		  });
     }else{
       logger.debug('Error: ' + JSON.stringify(e));
-      req.session.msg = e.message;
+      req.session.flash = {msg:e.message, r:0};
       res.redirect('/');
     }
   }, req, res);
@@ -65,11 +65,11 @@ function _update(req, res) {
   ACS.Users.update(data, function(e) {
     if(e.success && e.success === true){
       logger.info('users#update: ' + JSON.stringify(e));
-      req.session.msg = "Successfully updated the user profile.";
+      req.session.flash = {msg:"Successfully updated the user profile.", r:0};
       res.redirect('/');
     }else{
       logger.debug('Error: ' + JSON.stringify(e));
-      req.session.msg = e.message;
+      req.session.flash = {msg:e.message, r:0};
       res.redirect('/profile');
     }
   }, req, res);

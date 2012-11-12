@@ -11,7 +11,7 @@ function _index(req, res) {
         req: req
       });
     }else{
-      req.session.msg = e.message;
+      req.session.flash = {msg:e.message, r:0};
       res.redirect('/');
       logger.debug('Error: ' + JSON.stringify(e));
     }
@@ -31,7 +31,7 @@ function _show(req, res) {
         obj: e
       });
     }else{
-      req.session.msg = e.message;
+      req.session.flash = {msg:e.message, r:0};
       res.redirect('/events');
       logger.debug('Error: ' + JSON.stringify(e));
     }
@@ -59,11 +59,11 @@ function _create(req, res) {
   ACS.Events.create(data, function(e) {
     if(e.success && e.success === true){
       logger.info('events#create: ' + JSON.stringify(e));
-      req.session.msg = "Successfully create a event #"+e.events[0].id;
+      req.session.flash = {msg:"Successfully create a event #"+e.events[0].id, r:0};
       res.redirect('/events');
     }else{
       logger.debug('Error: ' + JSON.stringify(e));
-      req.session.msg = e.message;
+      req.session.flash = {msg:e.message, r:0};
       res.redirect('/events/new');
     }
   }, req, res);
@@ -82,7 +82,7 @@ function _edit(req, res) {
       });
     }else{
       logger.debug('Error: ' + JSON.stringify(e));
-      req.session.msg = e.message;
+      req.session.flash = {msg:e.message, r:0};
       res.redirect('/events');
     }
   }, req, res);
@@ -102,11 +102,11 @@ function _update(req, res) {
   ACS.Events.update(data, function(e) {
     if(e.success && e.success === true){
       logger.info('events#update: ' + JSON.stringify(e));
-      req.session.msg = "Successfully update a event #"+e.events[0].id;
+      req.session.flash = {msg:"Successfully update a event #"+e.events[0].id, r:0};
       res.redirect('/events');
     }else{
       logger.debug('Error: ' + JSON.stringify(e));
-      req.session.msg = e.message;
+      req.session.flash = {msg:e.message, r:0};
       res.redirect('/events/'+req.params.id+'/edit');
     }
   }, req, res);
@@ -120,11 +120,11 @@ function _destroy(req, res) {
   ACS.Events.remove(data, function(e) {
     if(e.success && e.success === true){
       logger.info('events#destroy: ' + JSON.stringify(e));
-      req.session.msg = "Successfully delete a event #"+req.params.id;
+      req.session.flash = {msg:"Successfully delete a event #"+req.params.id, r:0};
       res.redirect('/events');
     }else{
       logger.debug('Error: ' + JSON.stringify(e));
-      req.session.msg = e.message;
+      req.session.flash = {msg:e.message, r:0};
       res.redirect('/events');
     }
   }, req, res);
