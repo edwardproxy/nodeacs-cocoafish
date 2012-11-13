@@ -35,7 +35,7 @@ form{margin:0;padding:0;}
 /* */
 #ctr{position:fixed;width:200px;border-right:2px solid #ccc;height:100%;}
 #ctnr{position:relative;margin:0 0 0 202px;padding:0;width:100%;}
-#login,.form-ctnr{width:500px;padding:30px;border:1px solid #333;background:#f5f5f5;margin:10px;}
+#signup,#login,.form-ctnr{width:500px;padding:30px;border:1px solid #333;background:#f5f5f5;margin:10px;}
 .form-ctnr > form > div{margin:5px 0;}
 #login span,.form-ctnr span{padding:3px;outline:none;}
 input{padding:3px;outline:none;border:1px solid #aaa;}

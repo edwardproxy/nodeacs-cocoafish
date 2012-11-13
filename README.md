@@ -6,10 +6,9 @@ https://github.com/visionmedia/express/wiki/Migrating-from-2.x-to-3.x
 This app is using express-partials(https://github.com/publicclass/express-partials) for view system.
 
 Things to do,
-  v dynamic flash message
-  - user auth
   - custom fields
   - geo coords
+  - pagination
 
 optional
   - better chats

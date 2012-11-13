@@ -18,7 +18,9 @@
   },
   "preferGlobal": false,
   "dependencies": {
+    "express-partials": "*"
   },
   "license":"",
-  "private": true
+  "private": true,
+  "framework":"mvc"
 }

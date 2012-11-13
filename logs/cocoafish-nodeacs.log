@@ -576,3 +576,78 @@
 [2012-11-12 09:35:02.424] [INFO] cocoafish-nodeacs - User logged in: peter l
 [2012-11-12 09:35:32.499] [INFO] cocoafish-nodeacs - User logged in: peter l
 [2012-11-12 09:35:38.863] [INFO] cocoafish-nodeacs - User logged in: peter l
+[2012-11-12 17:19:37.713] [INFO] cocoafish-nodeacs - Created user: p l
+[2012-11-12 17:25:29.794] [INFO] cocoafish-nodeacs - Created user: sadf asd
+[2012-11-12 17:26:33.646] [INFO] cocoafish-nodeacs - User logged in: peter l
+[2012-11-12 17:27:36.225] [INFO] cocoafish-nodeacs - User logged in: peter l
+[2012-11-12 17:27:37.426] [DEBUG] cocoafish-nodeacs - Error: {"success":false,"error":true,"code":401,"message":"You need to sign in or sign up before continuing."}
+[2012-11-12 17:27:38.469] [DEBUG] cocoafish-nodeacs - Error: {"success":false,"error":true,"code":401,"message":"You need to sign in or sign up before continuing."}
+[2012-11-12 17:27:39.087] [DEBUG] cocoafish-nodeacs - Error: {"success":false,"error":true,"code":401,"message":"You need to sign in or sign up before continuing."}
+[2012-11-12 17:27:39.347] [DEBUG] cocoafish-nodeacs - Error: {"success":false,"error":true,"code":401,"message":"You need to sign in or sign up before continuing."}
+[2012-11-12 17:27:39.693] [DEBUG] cocoafish-nodeacs - Error: {"success":false,"error":true,"code":401,"message":"You need to sign in or sign up before continuing."}
+[2012-11-12 17:28:20.185] [INFO] cocoafish-nodeacs - User logged in: peter l
+[2012-11-12 17:49:25.183] [INFO] cocoafish-nodeacs - User logged in: peter l
+[2012-11-12 17:50:21.204] [INFO] cocoafish-nodeacs - User logged in: peter l
+[2012-11-12 17:52:41.161] [INFO] cocoafish-nodeacs - User logged in: peter l
+[2012-11-12 17:54:07.505] [INFO] cocoafish-nodeacs - User logged in: peter l
+[2012-11-12 17:55:12.549] [INFO] cocoafish-nodeacs - User logged in: peter l
+[2012-11-12 17:55:39.795] [INFO] cocoafish-nodeacs - Created user: peter lee
+[2012-11-12 17:56:04.077] [INFO] cocoafish-nodeacs - User logged in: peter l
+[2012-11-12 17:57:29.790] [INFO] cocoafish-nodeacs - User logged in: peter l
+[2012-11-12 17:57:37.649] [INFO] cocoafish-nodeacs - User logged in: peter l
+[2012-11-12 17:58:01.894] [INFO] cocoafish-nodeacs - User logged in: peter l
+[2012-11-12 17:58:10.237] [INFO] cocoafish-nodeacs - User logged in: peter l
+[2012-11-12 17:58:21.713] [INFO] cocoafish-nodeacs - Created user: sadklfj sadf
+[2012-11-12 17:58:23.516] [INFO] cocoafish-nodeacs - users#showMe: {"users":[{"id":"50a1a93d15e06042c70a947d","first_name":"sadklfj","last_name":"sadf","created_at":"2012-11-13T01:58:21+0000","updated_at":"2012-11-13T01:58:21+0000","external_accounts":[],"confirmed_at":"2012-11-13T01:58:21+0000","email":"asdaaa@c.com","admin":"false","stats":{"photos":{"total_count":0},"storage":{"used":0}}}],"success":true,"error":false,"meta":{"code":200,"status":"ok","method_name":"showMe","session_id":"Y2KDeW-_RjNpwJ5ys6VN2mZC54I"}}
+[2012-11-12 17:58:25.088] [INFO] cocoafish-nodeacs - users#update: {"users":[{"id":"50a1a93d15e06042c70a947d","first_name":"sadklfj","last_name":"sadf","created_at":"2012-11-13T01:58:21+0000","updated_at":"2012-11-13T01:58:21+0000","external_accounts":[],"confirmed_at":"2012-11-13T01:58:21+0000","email":"asdaaa@c.com","admin":"false","stats":{"photos":{"total_count":0},"storage":{"used":0}}}],"success":true,"error":false,"meta":{"code":200,"status":"ok","method_name":"updateUser","session_id":"Y2KDeW-_RjNpwJ5ys6VN2mZC54I"}}
+[2012-11-12 17:58:34.976] [INFO] cocoafish-nodeacs - User logged in: peter l
+[2012-11-12 17:59:03.377] [INFO] cocoafish-nodeacs - User logged in: peter l
+[2012-11-12 17:59:30.361] [INFO] cocoafish-nodeacs - User logged in: peter l
+[2012-11-12 18:00:59.260] [INFO] cocoafish-nodeacs - User logged in: peter l
+[2012-11-12 18:01:19.569] [INFO] cocoafish-nodeacs - User logged in: peter l
+[2012-11-12 18:02:39.110] [INFO] cocoafish-nodeacs - User logged in: peter l
+[2012-11-12 18:03:24.594] [INFO] cocoafish-nodeacs - User logged in: peter l
+[2012-11-12 18:03:44.808] [INFO] cocoafish-nodeacs - User logged in: peter l
+[2012-11-12 18:05:06.180] [INFO] cocoafish-nodeacs - User logged in: peter l
+[2012-11-12 18:08:06.314] [INFO] cocoafish-nodeacs - User logged in: peter l
+[2012-11-12 18:08:36.720] [INFO] cocoafish-nodeacs - users#showMe: {"users":[{"id":"4fed396eb685530e5a00001d","first_name":"peter","last_name":"l","tags":["insu","peter"],"created_at":"2012-06-29T05:13:18+0000","updated_at":"2012-11-13T02:08:06+0000","external_accounts":[],"confirmed_at":"2012-06-29T05:13:18+0000","username":"peterleee","email":"peter@cocoafish.com","admin":"false","stats":{"photos":{"total_count":3},"storage":{"used":4505728}}}],"success":true,"error":false,"meta":{"code":200,"status":"ok","method_name":"showMe","session_id":"3CupZy7ELnXq-kMymleL8fgm6-U"}}
+[2012-11-12 18:09:45.893] [INFO] cocoafish-nodeacs - users#showMe: {"users":[{"id":"4fed396eb685530e5a00001d","first_name":"peter","last_name":"l","tags":["insu","peter"],"created_at":"2012-06-29T05:13:18+0000","updated_at":"2012-11-13T02:08:06+0000","external_accounts":[],"confirmed_at":"2012-06-29T05:13:18+0000","username":"peterleee","email":"peter@cocoafish.com","admin":"false","stats":{"photos":{"total_count":3},"storage":{"used":4505728}}}],"success":true,"error":false,"meta":{"code":200,"status":"ok","method_name":"showMe","session_id":"3CupZy7ELnXq-kMymleL8fgm6-U"}}
+[2012-11-12 18:10:03.496] [INFO] cocoafish-nodeacs - User logged in: peter l
+[2012-11-12 18:10:09.998] [INFO] cocoafish-nodeacs - users#showMe: {"users":[{"id":"4fed396eb685530e5a00001d","first_name":"peter","last_name":"l","tags":["insu","peter"],"created_at":"2012-06-29T05:13:18+0000","updated_at":"2012-11-13T02:10:03+0000","external_accounts":[],"confirmed_at":"2012-06-29T05:13:18+0000","username":"peterleee","email":"peter@cocoafish.com","admin":"false","stats":{"photos":{"total_count":3},"storage":{"used":4505728}}}],"success":true,"error":false,"meta":{"code":200,"status":"ok","method_name":"showMe","session_id":"3CupZy7ELnXq-kMymleL8fgm6-U"}}
+[2012-11-12 18:10:18.573] [INFO] cocoafish-nodeacs - users#showMe: {"users":[{"id":"4fed396eb685530e5a00001d","first_name":"peter","last_name":"l","tags":["insu","peter"],"created_at":"2012-06-29T05:13:18+0000","updated_at":"2012-11-13T02:10:03+0000","external_accounts":[],"confirmed_at":"2012-06-29T05:13:18+0000","username":"peterleee","email":"peter@cocoafish.com","admin":"false","stats":{"photos":{"total_count":3},"storage":{"used":4505728}}}],"success":true,"error":false,"meta":{"code":200,"status":"ok","method_name":"showMe","session_id":"3CupZy7ELnXq-kMymleL8fgm6-U"}}
+[2012-11-12 18:11:58.766] [INFO] cocoafish-nodeacs - User logged in: peter l
+[2012-11-12 18:13:42.601] [INFO] cocoafish-nodeacs - User logged in: peter l
+[2012-11-12 18:14:46.843] [INFO] cocoafish-nodeacs - users#showMe: {"users":[{"id":"4fed396eb685530e5a00001d","first_name":"peter","last_name":"l","tags":["insu","peter"],"created_at":"2012-06-29T05:13:18+0000","updated_at":"2012-11-13T02:13:42+0000","external_accounts":[],"confirmed_at":"2012-06-29T05:13:18+0000","username":"peterleee","email":"peter@cocoafish.com","admin":"false","stats":{"photos":{"total_count":3},"storage":{"used":4505728}}}],"success":true,"error":false,"meta":{"code":200,"status":"ok","method_name":"showMe","session_id":"3CupZy7ELnXq-kMymleL8fgm6-U"}}
+[2012-11-12 18:16:24.628] [INFO] cocoafish-nodeacs - User logged in: peter l
+[2012-11-12 18:16:25.736] [INFO] cocoafish-nodeacs - users#showMe: {"users":[{"id":"4fed396eb685530e5a00001d","first_name":"peter","last_name":"l","tags":["insu","peter"],"created_at":"2012-06-29T05:13:18+0000","updated_at":"2012-11-13T02:16:24+0000","external_accounts":[],"confirmed_at":"2012-06-29T05:13:18+0000","username":"peterleee","email":"peter@cocoafish.com","admin":"false","stats":{"photos":{"total_count":3},"storage":{"used":4505728}}}],"success":true,"error":false,"meta":{"code":200,"status":"ok","method_name":"showMe","session_id":"3CupZy7ELnXq-kMymleL8fgm6-U"}}
+[2012-11-12 18:16:44.058] [INFO] cocoafish-nodeacs - User logged in: peter l
+[2012-11-12 20:06:45.335] [INFO] cocoafish-nodeacs - User logged in: peter l
+[2012-11-12 20:07:58.920] [INFO] cocoafish-nodeacs - User logged in: peter l
+[2012-11-12 20:10:00.303] [INFO] cocoafish-nodeacs - User logged in: peter l
+[2012-11-12 20:15:01.718] [INFO] cocoafish-nodeacs - User logged in: peter l
+[2012-11-12 20:16:16.364] [INFO] cocoafish-nodeacs - User logged in: peter l
+[2012-11-13 09:57:21.872] [INFO] cocoafish-nodeacs - User logged in: peter l
+[2012-11-13 09:58:07.867] [INFO] cocoafish-nodeacs - users#showMe: {"users":[{"id":"4fed396eb685530e5a00001d","first_name":"peter","last_name":"l","tags":["insu","peter"],"created_at":"2012-06-29T05:13:18+0000","updated_at":"2012-11-13T17:57:20+0000","external_accounts":[],"confirmed_at":"2012-06-29T05:13:18+0000","username":"peterleee","email":"peter@cocoafish.com","admin":"false","stats":{"photos":{"total_count":3},"storage":{"used":4505728}}}],"success":true,"error":false,"meta":{"code":200,"status":"ok","method_name":"showMe","session_id":"3CupZy7ELnXq-kMymleL8fgm6-U"}}
+[2012-11-13 10:01:43.617] [INFO] cocoafish-nodeacs - User logged in: peter l
+[2012-11-13 10:03:50.859] [INFO] cocoafish-nodeacs - User logged in: peter l
+[2012-11-13 10:04:37.213] [INFO] cocoafish-nodeacs - User logged in: peter l
+[2012-11-13 10:05:11.307] [INFO] cocoafish-nodeacs - User logged in: peter l
+[2012-11-13 10:07:30.470] [INFO] cocoafish-nodeacs - User logged in: peter l
+[2012-11-13 10:08:00.826] [INFO] cocoafish-nodeacs - User logged in: peter l
+[2012-11-13 10:08:27.101] [INFO] cocoafish-nodeacs - User logged in: peter l
+[2012-11-13 10:10:41.559] [INFO] cocoafish-nodeacs - User logged in: peter l
+[2012-11-13 10:12:31.058] [INFO] cocoafish-nodeacs - User logged in: peter l
+[2012-11-13 10:42:47.578] [DEBUG] cocoafish-nodeacs - Error: {"success":false,"error":true,"code":401,"message":"You need to sign in or sign up before continuing."}
+[2012-11-13 10:42:49.774] [DEBUG] cocoafish-nodeacs - Error: {"success":false,"error":true,"code":401,"message":"You need to sign in or sign up before continuing."}
+[2012-11-13 10:42:50.348] [DEBUG] cocoafish-nodeacs - Error: {"success":false,"error":true,"code":401,"message":"You need to sign in or sign up before continuing."}
+[2012-11-13 10:46:11.042] [DEBUG] cocoafish-nodeacs - Error: {"success":false,"error":true,"code":401,"message":"You need to sign in or sign up before continuing."}
+[2012-11-13 10:46:11.997] [DEBUG] cocoafish-nodeacs - Error: {"success":false,"error":true,"code":401,"message":"You need to sign in or sign up before continuing."}
+[2012-11-13 10:46:13.039] [DEBUG] cocoafish-nodeacs - Error: {"success":false,"error":true,"code":401,"message":"You need to sign in or sign up before continuing."}
+[2012-11-13 10:46:20.526] [INFO] cocoafish-nodeacs - User logged in: peter l
+[2012-11-13 10:58:24.629] [INFO] cocoafish-nodeacs - User logged in: peter l
+[2012-11-13 10:58:35.105] [DEBUG] cocoafish-nodeacs - {"post_id":"509d65f75fbcea3fa007deba","title":"flash test","content":"test","tags":"1,2,3,4"}
+[2012-11-13 10:58:35.410] [INFO] cocoafish-nodeacs - posts#update: {"posts":[{"id":"509d65f75fbcea3fa007deba","title":"flash test","tags":["1","2","3","4"],"created_at":"2012-11-09T20:22:15+0000","updated_at":"2012-11-13T18:58:35+0000","content":"test","user":{"id":"4fed396eb685530e5a00001d","first_name":"peter","last_name":"l","tags":["insu","peter"],"created_at":"2012-06-29T05:13:18+0000","updated_at":"2012-11-13T18:58:24+0000","external_accounts":[],"confirmed_at":"2012-06-29T05:13:18+0000","username":"peterleee","email":"peter@cocoafish.com","admin":"false"}}],"success":true,"error":false,"meta":{"code":200,"status":"ok","method_name":"updatePost"}}
+[2012-11-13 10:58:50.359] [INFO] cocoafish-nodeacs - users#showMe: {"users":[{"id":"4fed396eb685530e5a00001d","first_name":"peter","last_name":"l","tags":["insu","peter"],"created_at":"2012-06-29T05:13:18+0000","updated_at":"2012-11-13T18:58:24+0000","external_accounts":[],"confirmed_at":"2012-06-29T05:13:18+0000","username":"peterleee","email":"peter@cocoafish.com","admin":"false","stats":{"photos":{"total_count":3},"storage":{"used":4505728}}}],"success":true,"error":false,"meta":{"code":200,"status":"ok","method_name":"showMe","session_id":"RdOVzGq_a7cL0WnynBm6pGi53QQ"}}
+[2012-11-13 10:58:53.262] [INFO] cocoafish-nodeacs - users#update: {"users":[{"id":"4fed396eb685530e5a00001d","first_name":"peter","last_name":"l","tags":["insu","peter"],"created_at":"2012-06-29T05:13:18+0000","updated_at":"2012-11-13T18:58:53+0000","external_accounts":[],"confirmed_at":"2012-06-29T05:13:18+0000","username":"peterlee","email":"peter@cocoafish.com","admin":"false","stats":{"photos":{"total_count":3},"storage":{"used":4505728}}}],"success":true,"error":false,"meta":{"code":200,"status":"ok","method_name":"updateUser","session_id":"RdOVzGq_a7cL0WnynBm6pGi53QQ"}}
+[2012-11-13 10:58:54.397] [INFO] cocoafish-nodeacs - users#showMe: {"users":[{"id":"4fed396eb685530e5a00001d","first_name":"peter","last_name":"l","tags":["insu","peter"],"created_at":"2012-06-29T05:13:18+0000","updated_at":"2012-11-13T18:58:53+0000","external_accounts":[],"confirmed_at":"2012-06-29T05:13:18+0000","username":"peterlee","email":"peter@cocoafish.com","admin":"false","stats":{"photos":{"total_count":3},"storage":{"used":4505728}}}],"success":true,"error":false,"meta":{"code":200,"status":"ok","method_name":"showMe","session_id":"RdOVzGq_a7cL0WnynBm6pGi53QQ"}}
+[2012-11-13 10:59:11.219] [INFO] cocoafish-nodeacs - statuses#create: {"statuses":[{"id":"50a2987fe9768046f50b5217","message":"hello world","created_at":"2012-11-13T18:59:11+0000","updated_at":"2012-11-13T18:59:11+0000","user":{"id":"4fed396eb685530e5a00001d","first_name":"peter","last_name":"l","tags":["insu","peter"],"created_at":"2012-06-29T05:13:18+0000","updated_at":"2012-11-13T18:58:53+0000","external_accounts":[],"confirmed_at":"2012-06-29T05:13:18+0000","username":"peterlee","email":"peter@cocoafish.com","admin":"false"}}],"success":true,"error":false,"meta":{"code":200,"status":"ok","method_name":"createStatus"}}
