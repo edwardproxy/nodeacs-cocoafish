@@ -2,19 +2,17 @@ var logger = require('acs').logger;
 
 function index(req, res) {
   req.session.controller = "";
-  req.session.check(req, res, function(){
-    if(!req.session.user) {
-      res.render('login', {
-        layout: 'application',
-        req: req
-      });
-    }else{
-    	res.render('index', {
-        layout: 'application',
-        req: req
-      });
-    }
-  });
+  if(!req.session.user) {
+    res.render('login', {
+      layout: 'application',
+      req: req
+    });
+  }else{
+  	res.render('index', {
+      layout: 'application',
+      req: req
+    });
+  }
 }
 
 function login(req, res) {

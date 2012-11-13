@@ -658,3 +658,7 @@
 [2012-11-13 11:01:17.931] [DEBUG] cocoafish-nodeacs - Error: {"success":false,"error":true,"code":401,"message":"You need to sign in or sign up before continuing."}
 [2012-11-13 11:01:28.424] [INFO] cocoafish-nodeacs - Created user: pp pp
 [2012-11-13 11:01:30.801] [DEBUG] cocoafish-nodeacs - Error: {"success":false,"error":true,"code":401,"message":"You need to sign in or sign up before continuing."}
+[2012-11-13 11:02:57.048] [DEBUG] cocoafish-nodeacs - Error: {"success":false,"error":true,"code":401,"message":"You need to sign in or sign up before continuing."}
+[2012-11-13 11:02:58.947] [DEBUG] cocoafish-nodeacs - Error: {"success":false,"error":true,"code":401,"message":"You need to sign in or sign up before continuing."}
+[2012-11-13 11:03:03.223] [DEBUG] cocoafish-nodeacs - Error: {"success":false,"error":true,"code":401,"message":"You need to sign in or sign up before continuing."}
+[2012-11-13 11:03:24.772] [INFO] cocoafish-nodeacs - User logged in: peter l
