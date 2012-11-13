@@ -4,7 +4,7 @@ var ACS = require('acs').ACS,
 function _index(req, res) {
   req.session.check(req, res, function(){
     req.session.controller = "posts";
-    ACS.Posts.query({per_page:1000, order:"-updated_at", user_id:req.session.user.id}, function(e) {
+    ACS.Posts.query({per_page:1000, order:"-updated_at", where:"{\"user_id\":\""+req.session.user.id+"\"}"}, function(e) {
       if(e.success && e.success === true){
         res.render('posts/index', {
           layout: 'layout/application',

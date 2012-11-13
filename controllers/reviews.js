@@ -21,7 +21,8 @@ function _index(req, res) {
     var data = {
       per_page:1000,
       order:"-updated_at",
-      user_id:req.session.user.id
+      user_id:req.session.user.id,
+      where:"{\"user_id\":\""+req.session.user.id+"\"}"
     }
     data[req.params.type+"_id"] = req.params.type_id;
     ACS.Reviews.query(data, function(e) {
