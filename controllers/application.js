@@ -37,16 +37,14 @@ function login(req, res) {
 
 function signup(req, res) {
   req.session.controller = "";
-  req.session.check(req, res, function(){
-    if(req.session.user){
-      res.redirect('/');
-    }else{
-      res.render('signup', {
-        layout: 'application',
-        req: req
-      });
-    }
-  });
+  if(req.session.user){
+    res.redirect('/');
+  }else{
+    res.render('signup', {
+      layout: 'application',
+      req: req
+    });
+  }
 }
 
 function chatroom(req, res) {
