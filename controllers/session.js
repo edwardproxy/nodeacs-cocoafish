@@ -3,6 +3,8 @@ var ACS = require('acs').ACS,
 
 //do ACS user login
 function login(req, res) {
+	console.log('un: ' + req.body.un);
+	console.log('pw: ' + req.body.pw);
 	ACS.Users.login({
 		login: req.body.un,
 		password: req.body.pw
@@ -20,6 +22,7 @@ function login(req, res) {
 			res.redirect('/');
 			logger.info('User logged in: ' + user.name);
 		} else {
+			console.log(data.message);
 			req.session.flash = {msg:data.message, r:0};
 			res.render('login', {
 				layout: 'application',

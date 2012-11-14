@@ -32,6 +32,7 @@ function login(req, res) {
 }
 
 function signup(req, res) {
+  console.warn('this is application#signup');
   req.session.controller = "";
   res.render('signup', {
     layout: 'application',

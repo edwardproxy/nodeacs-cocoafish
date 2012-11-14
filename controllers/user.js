@@ -2,6 +2,7 @@ var ACS = require('acs').ACS;
 var logger = require('acs').logger;
 
 function signup(req, res) {
+	console.warn('this is user#signup');
 	var data = {
 		first_name: req.body.first_name,
 		last_name: req.body.last_name,

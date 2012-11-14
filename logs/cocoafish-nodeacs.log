@@ -576,3 +576,9 @@
 [2012-11-12 09:35:02.424] [INFO] cocoafish-nodeacs - User logged in: peter l
 [2012-11-12 09:35:32.499] [INFO] cocoafish-nodeacs - User logged in: peter l
 [2012-11-12 09:35:38.863] [INFO] cocoafish-nodeacs - User logged in: peter l
+[2012-11-13 16:55:18.383] [INFO] cocoafish-nodeacs - User logged in: edward
+[2012-11-13 16:59:51.156] [INFO] cocoafish-nodeacs - User logged in: edward
+[2012-11-13 17:01:04.634] [INFO] cocoafish-nodeacs - User logged in: edward
+[2012-11-13 17:01:42.501] [INFO] cocoafish-nodeacs - User logged in: edward
+[2012-11-13 17:02:14.539] [INFO] cocoafish-nodeacs - User logged in: edward
+[2012-11-13 17:02:15.457] [INFO] cocoafish-nodeacs - collections#create: {"collections":[{"id":"50a20c95ab2979416d0a983b","name":"collection-1352797334554-0","created_at":"2012-11-13T09:02:13+0000","updated_at":"2012-11-13T09:02:13+0000","counts":{"shares":0,"photos":0,"subcollections":0,"total_photos":0},"user":{"id":"5052ef24025afe168b0409bc","created_at":"2012-09-14T08:47:32+0000","updated_at":"2012-11-13T09:02:12+0000","external_accounts":[],"confirmed_at":"2012-09-14T08:47:32+0000","username":"edward","email":"edwardproxy@hotmail.com","admin":"false"}}],"success":true,"error":false,"meta":{"code":200,"status":"ok","method_name":"createCollection"}}
