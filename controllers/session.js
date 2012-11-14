@@ -17,7 +17,6 @@ function login(req, res) {
 				user.name = user.username;
 			}
 			req.session.flash = {msg:"Hello " + user.name + ".", r:0};
-			user.session_id = data.meta.session_id;
 			req.session.user = user;
 			res.redirect('/');
 			logger.info('User logged in: ' + user.name);
@@ -34,10 +33,9 @@ function login(req, res) {
 }
 
 function logout(req, res) {
-	// ACS.Users.logout(function(data) {
-	// 	delete req.session.user;
-	// }, req, res);
-	delete req.session.user;
-	req.session.flash = {msg:"Successfully logged out.", r:0};
-	res.redirect('/');
+	ACS.Users.logout(function(data) {
+		delete req.session.user;
+		req.session.flash = {msg:"Successfully logged out.", r:0};
+		res.redirect('/');
+	}, req, res);
 }

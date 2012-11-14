@@ -47,6 +47,7 @@ function profile(req, res) {
       req.session.flash = {msg:e.message, r:0};
       res.redirect('/');
     }
+    console.log("e:::"+JSON.stringify(e));
   }, req, res);
 }
 
@@ -59,8 +60,7 @@ function _update(req, res) {
 		username: req.body.username,
 		tags: req.body.tags,
 		password: req.body.password,
-		password_confirmation: req.body.password_confirmation,
-    session_id: req.session.user.session_id
+		password_confirmation: req.body.password_confirmation
 	};
 
   ACS.Users.update(data, function(e) {

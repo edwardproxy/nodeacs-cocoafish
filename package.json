@@ -21,5 +21,6 @@
     "express-partials": "*"
   },
   "license":"",
-  "private": true
+  "private": true,
+  "framework":"mvc"
 }

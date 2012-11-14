@@ -17,20 +17,35 @@ function index(req, res) {
 
 function login(req, res) {
   req.session.controller = "";
-  if(!req.session.user) {
-  	res.render('login', {
-      layout: 'application',
-      req: req
-    });
+  req.session.check(req, res, function(){
+    if(!req.session.user) {
+      res.render('login', {
+        layout: 'application',
+        req: req
+      });
+    }else{
+      req.session.flash = {msg:"You are already logged in.", r:0};
+      res.render('index', {
+        layout: 'application',
+        req: req
+      });
+    }
+  });
+}
+
+function signup(req, res) {
+  req.session.controller = "";
+  if(req.session.user){
+    res.redirect('/');
   }else{
-    req.session.flash = {msg:"You are already logged in.", r:0};
-    res.render('index', {
+    res.render('signup', {
       layout: 'application',
       req: req
     });
   }
 }
 
+<<<<<<< HEAD
 function signup(req, res) {
   console.warn('this is application#signup');
   req.session.controller = "";
@@ -40,11 +55,15 @@ function signup(req, res) {
   });
 }
 
+=======
+>>>>>>> c3548ae54fbc43c413f1dbb253a66e6c441c4ae6
 function chatroom(req, res) {
-  req.session.controller = "chatroom";
-  res.render('chatroom', {
-    layout: 'application',
-    req: req
+  req.session.check(req, res, function(){
+    req.session.controller = "chatroom";
+    res.render('chatroom', {
+      layout: 'application',
+      req: req
+    });
   });
 }
 
