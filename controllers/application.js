@@ -45,18 +45,6 @@ function signup(req, res) {
   }
 }
 
-<<<<<<< HEAD
-function signup(req, res) {
-  console.warn('this is application#signup');
-  req.session.controller = "";
-  res.render('signup', {
-    layout: 'application',
-    req: req
-  });
-}
-
-=======
->>>>>>> c3548ae54fbc43c413f1dbb253a66e6c441c4ae6
 function chatroom(req, res) {
   req.session.check(req, res, function(){
     req.session.controller = "chatroom";
