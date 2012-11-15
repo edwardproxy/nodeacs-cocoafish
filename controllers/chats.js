@@ -4,7 +4,12 @@ var ACS = require('acs').ACS,
 function _index(req, res) {
   req.session.check(req, res, function(){
     req.session.controller = "chats";
-    ACS.Chats.query({per_page:1000, order:"-updated_at", participate_ids:req.session.user.id}, function(e) {
+    var data = {
+      per_page: 1000,
+      order: "-updated_at",
+      participate_ids: req.session.user.id
+    };
+    ACS.Chats.query(data, function(e) {
       if(e.success && e.success === true){
         res.render('chats/index', {
           layout: 'layout/application',
