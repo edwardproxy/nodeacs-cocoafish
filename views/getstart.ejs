@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <meta charset="utf-8">
+    <title>Get Start Node ACS</title>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">google.load("jquery", "1.7.1");</script>
+    <script>
+    </script>
+    <style>
+      .squeeze{width:960px;margin:0 auto;}
+      #nodeacs-qs{}
+      #nodeacs-qs .section{}
+    </style>
+<body>
+    <div class="squeeze">
+      <div id="nodeacs-qs">
+        <h2>Quick Start</h2>
+        <h3>Node.ACS web app(CMS)</h3>
+
+        <div id="configs" class="section">
+          <h3>Configurations</h3>
+
+          <h4>Dependencies</h4>
+          <p>Setup dependencies on package.json, e.g)express-partials are going to be used for view system.</p>
+          <code>
+            "dependencies": {
+              "express-partials": "*"
+            }
+          </code>
+          
+          <h4>Initialize ACS</h4>
+          <p>Initialize Appcelerator Cloud Services on app.js</p>
+          <code>
+            function start(app) {
+              ACS.init(OAUTH_KEY, OAUTH_SECRET_KEY);
+              
+              ...
+            }
+          </code>
+
+          <h4>setup express.js settings</h4>
+          <p></p>
+          <code>
+            function start(app) {
+
+              ...
+
+              //use connect.session
+              app.use(express.cookieParser());
+              app.use(express.session({ key: 'node.acs', secret: "my secret" }));
+              
+              //set favicon
+              app.use(express.favicon(__dirname + '/public/images/favicon.ico'));
+
+              //set to use express-partial for view
+              app.use(partials());
+
+              //Request body parsing middleware supporting JSON, urlencoded, and multipart
+              app.use(express.bodyParser());
+
+              ...
+
+            }
+          </code>
+        </div>
+
+        <div id="controllers" class="section">
+          <h3>Controllers</h3>
+          
+          <h4>Functions(Actions)</h4>
+          <p></p>
+          <code>
+            function index(req, res) {
+              res.render('index', {
+                layout: 'application',
+                req: req
+              });
+            }
+          </code>
+        </div>
+
+        <div id="views" class="section">
+          <h3>Views</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+
+        <div id="assets" class="section">
+          <h3>Assets</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+      </div>
+    </div>
+</body>
+</html>

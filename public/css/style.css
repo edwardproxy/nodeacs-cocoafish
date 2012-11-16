@@ -33,8 +33,11 @@ form{margin:0;padding:0;}
 .p10{padding:10px !important;}
 
 /* */
+#t-nav{position:fixed;top:0;width:100%;padding:0;height:40px;border-bottom:1px solid #ccc;background:#fff;z-index:100;}
+#t-nav .ctnr{padding:0px;}
+#t-nav .ctnr #logo{width:190px;padding:0 5px;height:40px;background:#333;color:#fff;font:20px/40px 'open sans';text-align:center;}
 #ctr{position:fixed;width:200px;border-right:2px solid #ccc;height:100%;}
-#ctnr{position:relative;margin:0 0 0 202px;padding:0;width:100%;}
+#ctnr{position:relative;margin:41px 0 0 202px;padding:0;width:100%;}
 #login,.form-ctnr{width:500px;padding:30px;border:1px solid #333;background:#f5f5f5;margin:10px;}
 #login > form > div,.form-ctnr > form > div{margin:5px 0;}
 #login span,.form-ctnr span{padding:3px;outline:none;}

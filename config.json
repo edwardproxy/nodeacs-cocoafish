@@ -2,6 +2,7 @@
   "routes":
   [
     { "path": "/", "callback": "application#index" },
+    { "path": "/getstart", "method": "get", "callback": "application#getstart" },
     { "path": "/login", "method": "get", "callback": "application#login" },
     { "path": "/login", "method": "post", "callback": "session#login" },
     { "path": "/logout", "method": "get", "callback": "session#logout" },

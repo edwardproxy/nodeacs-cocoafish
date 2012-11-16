@@ -29,6 +29,11 @@
   <% if(req.session.flash && req.session.flash.msg){ %>
     <div id="flash"><%= req.session.flash.msg %></div>
   <% } %>
+  <div id="t-nav">
+    <div class="ctnr">
+      <div id="logo">NODE.ACS</div>
+    </div>
+  </div>
   <div id="ctr">
     <% if(req.session.user) { %>
       <div id="l-nav">

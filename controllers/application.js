@@ -63,3 +63,10 @@ function page_not_found(req, res) {
     req: req
   }); 
 }
+
+function getstart(req, res) {
+  res.render('getstart', {
+    layout: false,
+    req: req
+  });
+}
