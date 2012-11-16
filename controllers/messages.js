@@ -4,7 +4,11 @@ var ACS = require('acs').ACS,
 function _index(req, res) {
   req.session.check(req, res, function(){
     req.session.controller = "messages";
-    ACS.Messages.showInbox({per_page:1000, order:"-updated_at"}, function(e) {
+    var data = {
+      per_page:1000,
+      order:"-updated_at"
+    };
+    ACS.Messages.showInbox(data, function(e) {
       if(e.success && e.success === true){
         res.render('messages/index', {
           layout: 'layout/application',
@@ -45,7 +49,11 @@ function _show(req, res) {
 function _sent(req, res) {
   req.session.check(req, res, function(){
     req.session.controller = "messages";
-    ACS.Messages.showSent({per_page:1000, order:"-updated_at"}, function(e) {
+    var data = {
+      per_page:1000,
+      order:"-updated_at"
+    };
+    ACS.Messages.showSent(data, function(e) {
       if(e.success && e.success === true){
         res.render('messages/sent', {
           layout: 'layout/application',
@@ -84,7 +92,11 @@ function _thread(req, res) {
 function _threads(req, res) {
   req.session.check(req, res, function(){
     req.session.controller = "messages";
-    ACS.Messages.showThreads({per_page:1000, order:"-updated_at"}, function(e) {
+    var data = {
+      per_page:1000,
+      order:"-updated_at"
+    };
+    ACS.Messages.showThreads(data, function(e) {
       if(e.success && e.success === true){
         res.render('messages/threads', {
           layout: 'layout/application',

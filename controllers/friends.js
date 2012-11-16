@@ -4,7 +4,12 @@ var ACS = require('acs').ACS,
 function _index(req, res) {
   req.session.check(req, res, function(){
     req.session.controller = "friends";
-    ACS.Friends.search({per_page:1000, order:"-updated_at", user_id:req.session.user.id}, function(e) {
+    var data = {
+      per_page: 1000,
+      order: "-updated_at",
+      user_id: req.session.user.id
+    };
+    ACS.Friends.search(data, function(e) {
       if(e.success && e.success === true){
         res.render('friends/index', {
           layout: 'layout/application',

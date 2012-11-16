@@ -1,4 +1,5 @@
-var logger = require('acs').logger;
+var ACS = require('acs').ACS,
+    logger = require('acs').logger;
 
 function index(req, res) {
   req.session.controller = "";

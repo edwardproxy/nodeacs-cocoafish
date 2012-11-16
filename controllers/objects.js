@@ -18,7 +18,13 @@ function _start(req, res) {
 function _index(req, res) {
   req.session.check(req, res, function(){
     req.session.controller = "objects";
-    ACS.Objects.query({per_page:1000, order:"-updated_at", classname: req.params.classname, where:"{\"user_id\":\""+req.session.user.id+"\"}"}, function(e) {
+    var data = {
+      per_page:1000,
+      order:"-updated_at",
+      classname: req.params.classname,
+      where:"{\"user_id\":\""+req.session.user.id+"\"}"
+    };
+    ACS.Objects.query(data, function(e) {
       if(e.success && e.success === true){
         res.render('objects/index', {
           layout: 'layout/application',
