@@ -10,13 +10,6 @@
     { "path": "/signup", "method": "post", "callback": "user#signup" },
     { "path": "/profile", "method": "get", "callback": "user#profile" },
     { "path": "/profile/update", "method": "post", "callback": "user#_update" },
-    { "path": "/chatroom", "method": "get", "callback": "application#chatroom" },
-
-    { "path": "/acls", "method": "get", "callback": "acls#_index" },
-    { "path": "/acls/new", "method": "get", "callback": "acls#_new" },
-    { "path": "/acls/create", "method": "post", "callback": "acls#_create" },
-    { "path": "/acls/:id", "method": "get", "callback": "acls#_show" },
-    { "path": "/acls/:id/delete", "method": "get", "callback": "acls#_destroy" },
 
     { "path": "/chats", "method": "get", "callback": "chats#_index" },
     { "path": "/chats/new", "method": "get", "callback": "chats#_new" },
@@ -121,7 +114,6 @@
   ],
   "filters":
   [
-  	 { "path": "/chatroom", "callback": "session_filter#checkSession" },
      { "path": "/", "callback": "session_filter#checkUserSession" }
   ],
   "websockets":

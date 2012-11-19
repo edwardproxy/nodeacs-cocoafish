@@ -1,10 +1,10 @@
 {
-  "name": "cocoafish-nodeacs",
+  "name": "nodeacs-demo",
   "version": "0.1.0",
-  "description": "cocoafish on nodeacs!",
+  "description": "nodeacs",
   "type": "acs",
   "main": "app.js",
-  "logfile" : "cocoafish-nodeacs.log",
+  "logfile" : "nodeacs-demo.log",
   "keywords": [
   ],
   "author": "peter l",
@@ -13,8 +13,6 @@
   "contributors": [
   ],
   "repository": {
-    "type": "git",
-    "url": "https://github.com/ins429/nodeacs-cocoafish"
   },
   "preferGlobal": false,
   "dependencies": {
