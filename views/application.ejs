@@ -1,6 +1,6 @@
 <html>
 <head>
-  <title><% if(typeof title !== "undefined"){ %><%= title %><% }else{ %>Cocoafish<% } %></title>
+  <title><% if(typeof title !== "undefined"){ %><%= title %><% }else{ %>Node.ACS<% } %></title>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="/css/style.css" type="text/css">
   <script type="text/javascript" src="https://www.google.com/jsapi"></script>
@@ -29,21 +29,18 @@
   <% if(req.session.flash && req.session.flash.msg){ %>
     <div id="flash"><%= req.session.flash.msg %></div>
   <% } %>
+  <div id="t-nav">
+    <div class="ctnr">
+      <div id="logo">NODE.ACS</div>
+    </div>
+  </div>
   <div id="ctr">
     <% if(req.session.user) { %>
       <div id="l-nav">
         <a href="/profile" class="user l-n-btn"><%= (req.session.user.email) ? req.session.user.email : req.session.user.username %></a>
         <a href="/logout" class="l-n-btn">Logout</a>
-        <a href="/chatroom" class="l-n-btn">Chatroom</a>
-        <a href="/" class="l-n-btn">/</a>
+        <a href="/" class="l-n-btn">Home</a>
         <ul>
-          <li <% if(req.session.controller === "acls"){ %>class="active"<% } %>>
-            <a href="/acls">ACLs</a>
-            <ul>
-              <li><a href="/acls">index</a></li>
-              <li><a href="/acls/new">create</a></li>
-            </ul>
-          </li>
           <li <% if(req.session.controller === "chats"){ %>class="active"<% } %>>
             <a href="/chats">Chats</a>
             <ul>

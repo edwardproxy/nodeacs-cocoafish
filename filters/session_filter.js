@@ -46,7 +46,7 @@ function checkUserSession(req, res, next) {
     req.session.flash = {};
   }
 
-  if(!req.session.user && req.url !== "/" && req.url !== "/login" && req.url !== "/logout"  && req.url !== "/signup") {
+  if(!req.session.user && req.url !== "/" && req.url !== "/login" && req.url !== "/logout" && req.url !== "/signup" && req.url !== "/getstart"){
     req.session.flash = {msg:"Please login first.",r:0};
     res.render('login', {
       layout: 'application',
