@@ -1,13 +1,8 @@
 {
   "name": "nodeacs-demo",
   "version": "0.1.0",
-<<<<<<< HEAD
   "description": "cocoafish on nodeacs!",
   "framework": "mvc",
-=======
-  "description": "nodeacs",
-  "type": "acs",
->>>>>>> 1c5c461ec341f02b0c2cd2759ca5b5b29c54d846
   "main": "app.js",
   "logfile" : "nodeacs-demo.log",
   "keywords": [

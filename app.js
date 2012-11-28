@@ -5,12 +5,8 @@ var ACS = require('acs').ACS,
 
 // initialize app (setup ACS library and logger)
 function start(app) {
-<<<<<<< HEAD
 	console.log('this is app#start');
 	ACS.init('jNMQP76N5nR25yXYJ239bmHzPoox0I4O', 'y7bmfeGlhtfztR2kCeihNfYP25PZu2WR'); // Please fill me.
-=======
-	ACS.init('3XUnNvMwsfUm8zoqI3UDiqvpQA9qR9i0', 'VkbfjHJcQLJz5cE9X5MwGsFx1P0jraEA');
->>>>>>> 1c5c461ec341f02b0c2cd2759ca5b5b29c54d846
 	logger.setLevel('DEBUG');
 	
 	//use connect.session
